@@ -26,7 +26,20 @@ Output: 4
 
 **解题思路**
 
-this is the soluction
+
+### step 1
+
+    asdfasdf
+
+### step 2
+
+    asdfqwer
+
+### step 3
+
+    asdfasdf
+
+
 
 **代码**
 

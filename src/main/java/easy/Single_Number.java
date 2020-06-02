@@ -26,7 +26,21 @@ import elder.Question;
         ```
 
         """,
-        solution = "this is the soluction",
+        solution = """
+
+                ### step 1
+
+                    asdfasdf
+
+                ### step 2
+
+                    asdfqwer
+
+                ### step 3
+
+                    asdfasdf
+
+                """,
         category = "other"
 )
 public class Single_Number {
