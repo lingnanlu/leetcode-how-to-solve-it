@@ -27,7 +27,7 @@ import elder.Question;
 
         """,
         solution = "this is the soluction",
-        category = "easy"
+        category = "other"
 )
 public class Single_Number {
 

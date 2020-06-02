@@ -1,8 +1,8 @@
-# Single Number
+### Single Number
 
-**来源：** [https://leetcode.com/problems/single-number/](https://leetcode.com/problems/single-number/)
+**来源：** https://leetcode.com/problems/single-number/
 
-*****
+----
 
 **问题描述：**
 
@@ -13,26 +13,26 @@ Note:
 Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 
 Example 1:
-
-```text
+```
 Input: [2,2,1]
 Output: 1
 ```
 
 Example 2:
 
-```text
+```
 Input: [4,1,2,1,2]
 Output: 4
 ```
 
-*****
+
+----
 
 **解题思路：**
 
 this is the soluction
 
-*****
+----
 
 ```java
 public class Single_Number {
@@ -48,4 +48,3 @@ public class Single_Number {
     }
 }
 ```
-
