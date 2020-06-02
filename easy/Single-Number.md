@@ -1,8 +1,10 @@
 ### Single Number
 
-来源:https://leetcode.com/problems/single-number/
+**来源：** https://leetcode.com/problems/single-number/
 
-问题描述:
+----
+**问题描述：**
+
 Given a **non-empty** array of integers, every element appears twice except for one. Find that single one.
 
 Note:
@@ -23,9 +25,10 @@ Output: 4
 ```
 
 
-
-解题思路:
+----
+**解题思路：**
 this is the soluction
+----
 
 
 ```java
