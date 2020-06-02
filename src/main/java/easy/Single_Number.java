@@ -39,7 +39,6 @@ public class Single_Number {
             result = result ^ n;
         }
 
-
         return result;
     }
 }
