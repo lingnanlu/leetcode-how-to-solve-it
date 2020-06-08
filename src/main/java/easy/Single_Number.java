@@ -28,19 +28,9 @@ import elder.Question;
         """,
         solution = """
 
-                ### step 1
+                this is the soluction
 
-                    asdfasdf
-
-                ### step 2
-
-                    asdfqwer
-
-                ### step 3
-
-                    asdfasdf
-
-                """,
+        """,
         category = "other"
 )
 public class Single_Number {

@@ -27,17 +27,7 @@ Output: 4
 **解题思路**
 
 
-### step 1
-
-    asdfasdf
-
-### step 2
-
-    asdfqwer
-
-### step 3
-
-    asdfasdf
+        this is the soluction
 
 
 
