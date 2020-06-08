@@ -30,3 +30,4 @@
 
 下面是《怎样解题》中给出的一些步骤和问题，你在解题过程中，应该时刻提醒自己这些问题
 
+![怎样解题表](https://gitee.com/asanelder/pic_bed/raw/master/CleanShot%202020-06-08%20at%2014.43.49.png)
