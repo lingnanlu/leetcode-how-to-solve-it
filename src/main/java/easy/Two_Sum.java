@@ -1,8 +1,19 @@
 package easy;
 
+import elder.Question;
+
 import java.util.HashMap;
 
+
 // // 注意， hashmap的方式 nums中不能有重复元素， 否则，只能排序然后夹逼
+
+@Question(
+        title = "",
+        url ="url",
+        description ="description",
+        category = "category",
+        solution = "solution"
+)
 public class Two_Sum {
 
     public int[] twoSum(int[] nums, int target) {
