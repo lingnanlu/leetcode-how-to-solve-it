@@ -3,7 +3,7 @@ package array;
 import elder.Leetcode;
 
 @Leetcode(
-        title = "Remove Duplicate From Sorted Array",
+        title = "Remove Duplicates from Sorted Array",
         category = "Array",
         solution = """
                 q.问题是什么？
