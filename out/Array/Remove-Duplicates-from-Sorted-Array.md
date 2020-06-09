@@ -90,7 +90,7 @@ a.有点激动，似乎可行。。。发现只是简单的去掉newNums就行�
 ```java
 public class Remove_Duplicates_from_Sorted_Array {
 
-    @Evolution(name = "简单的复制数组")
+    @Evolution("简单的复制数组")
     public int[] duplicates(int[] nums) {
         int[] newNums = new int[nums.length];
 
@@ -104,7 +104,7 @@ public class Remove_Duplicates_from_Sorted_Array {
         return newNums;
     }
 
-    // 简单的复制数组, 更好的命名
+    @Evolution("简单的复制数组, 更好的命名")
     public int[] duplicatesBetterName(int[] nums) {
 
         int[] newNums = new int[nums.length];
@@ -157,7 +157,7 @@ public class Remove_Duplicates_from_Sorted_Array {
         return newNums;
     }
 
-    // 使用新数组去掉重复元素
+    @Evolution("使用新数组去掉重复元素")
     public int removeDuplicatesWithNewArray(int[] nums) {
 
         int[] newNums = new int[nums.length];
@@ -186,8 +186,7 @@ public class Remove_Duplicates_from_Sorted_Array {
         return j;
     }
 
-
-
+    @Solution
     public int removeDuplicates(int[] nums) {
 
         int i = 0;  //指向nums中下一个要复制的元素的index.
@@ -214,7 +213,7 @@ public class Remove_Duplicates_from_Sorted_Array {
         return j;
     }
 
-    // 思路不清晰的答案
+    @Deprecation("思路不清晰的答案")
     public int removeDuplicates_Old(int[] nums) {
 
         if (nums.length == 0) {
