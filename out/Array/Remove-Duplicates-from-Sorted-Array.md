@@ -1,6 +1,6 @@
 #Remove Duplicates from Sorted Array
 
-https://leetcode.com/problems/remove-duplicate-from-sort-array
+https://leetcode.com/problems/remove-duplicates-from-sort-array
 
 ### 问题描述
 
@@ -23,7 +23,7 @@ q.你能不能放松限制？
 ### 代码
 
 ```java
-public class Remove_Duplicate_From_Sort_Array {
+public class Remove_Duplicates_From_Sort_Array {
 
     public int removeDuplicates(int[] nums) {
 

@@ -19,7 +19,7 @@ import elder.Leetcode;
 
                 """
 )
-public class Remove_Duplicate_From_Sort_Array {
+public class Remove_Duplicates_From_Sort_Array {
 
     public int removeDuplicates(int[] nums) {
 
