@@ -1,14 +1,7 @@
 package easy;
 
-import elder.Leetcode;
-
 import java.util.Stack;
 
-@Leetcode(
-        title = "add binary",
-        solution = "this is the solution",
-        category = "other"
-)
 public class Add_Binary {
 
     public static void main(String[] args) {
