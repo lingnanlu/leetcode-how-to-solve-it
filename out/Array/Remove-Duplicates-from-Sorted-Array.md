@@ -90,8 +90,7 @@ a.有点激动，似乎可行。。。发现只是简单的去掉newNums就行�
 ```java
 public class Remove_Duplicates_from_Sorted_Array {
 
-
-    // 简单的复制数组
+    @Evolution(name = "简单的复制数组")
     public int[] duplicates(int[] nums) {
         int[] newNums = new int[nums.length];
 
