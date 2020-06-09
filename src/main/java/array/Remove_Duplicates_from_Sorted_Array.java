@@ -49,7 +49,7 @@ import elder.Solution;
 public class Remove_Duplicates_from_Sorted_Array {
 
 
-    @Solution(name = "简单的复制数组")
+    // 简单的复制数组
     public int[] duplicates(int[] nums) {
         int[] newNums = new int[nums.length];
 
@@ -63,7 +63,7 @@ public class Remove_Duplicates_from_Sorted_Array {
         return newNums;
     }
 
-    @Solution(name = "简单的复制数组, 更好的命名")
+    // 简单的复制数组, 更好的命名
     public int[] duplicatesBetterName(int[] nums) {
 
         int[] newNums = new int[nums.length];
@@ -116,7 +116,7 @@ public class Remove_Duplicates_from_Sorted_Array {
         return newNums;
     }
 
-    @Solution(name = "使用新数组去掉重复元素")
+    // 使用新数组去掉重复元素
     public int removeDuplicatesWithNewArray(int[] nums) {
 
         int[] newNums = new int[nums.length];
