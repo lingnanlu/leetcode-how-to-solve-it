@@ -1,7 +1,6 @@
 package array;
 
 import elder.Leetcode;
-import elder.Solution;
 
 @Leetcode(
         title = "Remove Duplicates from Sorted Array",
