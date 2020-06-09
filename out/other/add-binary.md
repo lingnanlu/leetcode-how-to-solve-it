@@ -1,7 +1,4 @@
-#add binary
-
-https://leetcode.com/problems/add-binary
-
+#[add binary](https://leetcode.com/problems/add-binary)
 ### 问题描述
 
 <p>Given two binary strings, return their sum (also a binary string).</p>
