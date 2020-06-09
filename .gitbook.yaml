@@ -1,4 +1,4 @@
-root: ./
+root: ./out
 
 ​structure:
   readme: README.md
