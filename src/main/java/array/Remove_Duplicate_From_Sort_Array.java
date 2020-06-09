@@ -1,5 +1,24 @@
-package easy;
+package array;
 
+import elder.Leetcode;
+
+@Leetcode(
+        title = "Remove Duplicate From Sorted Array",
+        category = "Array",
+        solution = """
+                q.问题是什么？
+
+                a.消除数组中的重复元素
+
+                q.限制是什么？
+
+                a.空间上要O(1),in-place,不能有额外的空间，时间上没要求
+
+                q.你能不能放松限制？
+
+
+                """
+)
 public class Remove_Duplicate_From_Sort_Array {
 
     public int removeDuplicates(int[] nums) {
