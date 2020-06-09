@@ -1,18 +1,29 @@
-package easy;
+###Two Sum
 
-import elder.Leetcode;
-import elder.Question;
+https://leetcode.com/problems/two-sum
 
-import java.util.HashMap;
+**问题描述**
 
+<p>Given an array of integers, return <strong>indices</strong> of the two numbers such that they add up to a specific target.</p>
 
-// // 注意， hashmap的方式 nums中不能有重复元素， 否则，只能排序然后夹逼
+<p>You may assume that each input would have <strong><em>exactly</em></strong> one solution, and you may not use the <em>same</em> element twice.</p>
 
-@Leetcode(
-        title = "Two Sum",
-        category = "other",
-        solution = "this is the solution"
-)
+<p><strong>Example:</strong></p>
+
+<pre>
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[<strong>0</strong>] + nums[<strong>1</strong>] = 2 + 7 = 9,
+return [<strong>0</strong>, <strong>1</strong>].
+</pre>
+
+**解题思路**
+
+this is the solution
+
+**代码**
+
+```java
 public class Two_Sum {
 
     public int[] twoSum(int[] nums, int target) {
@@ -37,3 +48,4 @@ public class Two_Sum {
         return result;
     }
 }
+```
