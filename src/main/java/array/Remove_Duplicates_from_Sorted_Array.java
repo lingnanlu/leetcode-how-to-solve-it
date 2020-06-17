@@ -1,13 +1,10 @@
 package array;
 
-import elder.Deprecation;
-import elder.Evolution;
-import elder.Leetcode;
-import elder.Solution;
+import elder.*;
 
 @Leetcode(
         title = "Remove Duplicates from Sorted Array",
-        category = "Array",
+        category = Category.ARRAY,
         howToSolveIt = """
                 q.问题是什么？
 
@@ -50,46 +47,49 @@ import elder.Solution;
 )
 public class Remove_Duplicates_from_Sorted_Array {
 
-    @Evolution("简单的复制数组")
-    public int[] duplicates(int[] nums) {
-        int[] newNums = new int[nums.length];
+    @Try("简单的复制数组")
+    class ArrayCopy {
+        public int[] duplicates(int[] nums) {
+            int[] newNums = new int[nums.length];
 
-        //[0, nums.length)
-        for (int i = 0, j = 0; i < nums.length; i++, j++) {
+            //[0, nums.length)
+            for (int i = 0, j = 0; i < nums.length; i++, j++) {
 
-            //真正的复制
-            newNums[j] = nums[i];
+                //真正的复制
+                newNums[j] = nums[i];
+            }
+
+            return newNums;
         }
-
-        return newNums;
     }
 
-    @Evolution("简单的复制数组, 更好的命名")
-    public int[] duplicatesBetterName(int[] nums) {
 
-        int[] newNums = new int[nums.length];
+    @Try("简单的复制数组, 更好的命名")
+    class ArrayCopyWithBetterName {
+        public int[] duplicatesBetterName(int[] nums) {
 
-        // 注意，这两个变量的含义不应该在程序运行期间改变
-        int i = 0;  //指向nums中下一个要复制的元素的index.
-        int j = 0;  //指向newNums中下一个要填充元素的index.
+            int[] newNums = new int[nums.length];
 
+            // 注意，这两个变量的含义不应该在程序运行期间改变
+            int i = 0;  //指向nums中下一个要复制的元素的index.
+            int j = 0;  //指向newNums中下一个要填充元素的index.
 
-        /**
-         *   while 比do while更安全，因为它在事情真正执行前（事情的真正执行可能带来问题
-         *   要避免问题的最佳方式就是在事情真正开始执行前，检查事情是否能真正的开始。
-         *   这里的例子就是，如果i== nums.length，所以没有可以要复制的元素，也就没必要进行复制的动作了。
-         */
-        while(i != nums.length) {
+            /**
+             *   while 比do while更安全，因为它在事情真正执行前（事情的真正执行可能带来问题
+             *   要避免问题的最佳方式就是在事情真正开始执行前，检查事情是否能真正的开始。
+             *   这里的例子就是，如果i== nums.length，所以没有可以要复制的元素，也就没必要进行复制的动作了。
+             */
+            while(i != nums.length) {
 
-            // 真正的复制动作
-            newNums[j] = nums[i];
+                // 真正的复制动作
+                newNums[j] = nums[i];
 
-            // 这里，i，j的含义发生变化了，所以要移动两者，让其恢复到本来的含义。
-            i++;
-            j++;
+                // 这里，i，j的含义发生变化了，所以要移动两者，让其恢复到本来的含义。
+                i++;
+                j++;
 
-            // 现在要考虑的问题是，要不要继续复制下去。由i的含义可知，当i所指的元素是最后一个的下一个是，应该不再进行复制，所以
-        }
+                // 现在要考虑的问题是，要不要继续复制下去。由i的含义可知，当i所指的元素是最后一个的下一个是，应该不再进行复制，所以
+            }
 
 //        do {
 //            // 真正的复制动作
@@ -103,102 +103,110 @@ public class Remove_Duplicates_from_Sorted_Array {
 //        } while(i != nums.length);             // 这里控制着，是否要继续下去，当i == nums.length时，说明已经复制完了。
 
 
+            /**
+             * do while和while这里有个区别就是
+             *
+             * do while相关于先让事情可以进行，然后判断什么时候要终止
+             *
+             * 而while比do while要好的一点就是，它不仅仅能判断什么时候要终止，而且可以判断是否满足条件来开始，这就相关于多了一层检查，所以更安全。
+             *
+             * 所以要从开始，执行，结束的角度来考虑这两种循环。
+             */
 
-        /**
-         * do while和while这里有个区别就是
-         *
-         * do while相关于先让事情可以进行，然后判断什么时候要终止
-         *
-         * 而while比do while要好的一点就是，它不仅仅能判断什么时候要终止，而且可以判断是否满足条件来开始，这就相关于多了一层检查，所以更安全。
-         *
-         * 所以要从开始，执行，结束的角度来考虑这两种循环。
-         */
-
-        return newNums;
+            return newNums;
+        }
     }
 
-    @Evolution("使用新数组去掉重复元素")
-    public int removeDuplicatesWithNewArray(int[] nums) {
 
-        int[] newNums = new int[nums.length];
+    @Solution("使用新数组去掉重复元素")
+    class RemoveDuplicatesUsingNewArray {
+        public int removeDuplicates(int[] nums) {
 
-        int i = 0;  //指向nums中下一个要复制的元素的index.
-        int j = 0;  //指向newNums中下一个要填充元素的index.
+            int[] newNums = new int[nums.length];
 
-        while(i != nums.length) {
+            int i = 0;  //指向nums中下一个要复制的元素的index.
+            int j = 0;  //指向newNums中下一个要填充元素的index.
 
-            //要改变的地方就是这里在复制之前，要做重复性检查
-            if(
-                    j == 0                              // 说明newNums还没有元素，自然不会重复
-                    || nums[i] != newNums[j - 1]        // 说明将要复制的元素可newNums中最后一个元素不相等
-            ) {
-                newNums[j] = nums[i];
-                // 这里，i，j的含义发生变化了，所以要移动两者，让其恢复到本来的含义。
-                i++;
-                j++;
-            } else {
-                // 不进行复制，说明元素重复了，所以i要指向下一个元素
-                i++;
+            while(i != nums.length) {
+
+                //要改变的地方就是这里在复制之前，要做重复性检查
+                if(
+                        j == 0                              // 说明newNums还没有元素，自然不会重复
+                                || nums[i] != newNums[j - 1]        // 说明将要复制的元素可newNums中最后一个元素不相等
+                ) {
+                    newNums[j] = nums[i];
+                    // 这里，i，j的含义发生变化了，所以要移动两者，让其恢复到本来的含义。
+                    i++;
+                    j++;
+                } else {
+                    // 不进行复制，说明元素重复了，所以i要指向下一个元素
+                    i++;
+                }
             }
-        }
 
-        //[0,j)为newNums中的元素，newNums.length == j,所以j就是新数组的长度。
-        return j;
+            //[0,j)为newNums中的元素，newNums.length == j,所以j就是新数组的长度。
+            return j;
+        }
     }
 
-    @Solution
-    public int removeDuplicates(int[] nums) {
+    @Best("原地去除重复元素")
+    class RemoveDuplicatesInplace {
+        public int removeDuplicates(int[] nums) {
 
-        int i = 0;  //指向nums中下一个要复制的元素的index.
-        int j = 0;  //指向newNums中下一个要填充元素的index.
+            int i = 0;  //指向nums中下一个要复制的元素的index.
+            int j = 0;  //指向newNums中下一个要填充元素的index.
 
-        while(i != nums.length) {
+            while(i != nums.length) {
 
-            //要改变的地方就是这里在复制之前，要做重复性检查
-            if(
-                    j == 0                              // 说明newNums还没有元素，自然不会重复
-                    || nums[i] != nums[j - 1]           // 说明将要复制的元素可newNums中最后一个元素不相等
-            ) {
-                nums[j] = nums[i];
-                // 这里，i，j的含义发生变化了，所以要移动两者，让其恢复到本来的含义。
-                i++;
-                j++;
-            } else {
-                // 不进行复制，说明元素重复了，所以i要指向下一个元素
-                i++;
+                //要改变的地方就是这里在复制之前，要做重复性检查
+                if(
+                        j == 0                              // 说明newNums还没有元素，自然不会重复
+                                || nums[i] != nums[j - 1]           // 说明将要复制的元素可newNums中最后一个元素不相等
+                ) {
+                    nums[j] = nums[i];
+                    // 这里，i，j的含义发生变化了，所以要移动两者，让其恢复到本来的含义。
+                    i++;
+                    j++;
+                } else {
+                    // 不进行复制，说明元素重复了，所以i要指向下一个元素
+                    i++;
+                }
             }
-        }
 
-        //[0,j)为newNums中的元素，newNums.length == j,所以j就是新数组的长度。
-        return j;
+            //[0,j)为newNums中的元素，newNums.length == j,所以j就是新数组的长度。
+            return j;
+        }
     }
 
-    @Deprecation("思路不清晰的答案")
-    public int removeDuplicates_Old(int[] nums) {
+    @Solution("思路不清晰的答案")
+    class Old {
+        public int removeDuplicates(int[] nums) {
 
-        if (nums.length == 0) {
-            return 0;
-        }
-
-        int cur = 0;            //指向结果
-        int result_len = 1;     //结果已经有一个元素了
-
-        //从第2个元素开始迭代nums
-        int i = 1;
-        while(i < nums.length) {
-            //找到与cur所指向的元素不同的元素
-            while (i < nums.length && nums[i] == nums[cur] ) i++;
-
-            //此时, i所指向的元素与cur的不同
-            if (i < nums.length) {
-                nums[++cur] = nums[i];
-                result_len++;
-                i++;
-            } else {
-                break;
+            if (nums.length == 0) {
+                return 0;
             }
-        }
 
-        return result_len;
+            int cur = 0;            //指向结果
+            int result_len = 1;     //结果已经有一个元素了
+
+            //从第2个元素开始迭代nums
+            int i = 1;
+            while(i < nums.length) {
+                //找到与cur所指向的元素不同的元素
+                while (i < nums.length && nums[i] == nums[cur] ) i++;
+
+                //此时, i所指向的元素与cur的不同
+                if (i < nums.length) {
+                    nums[++cur] = nums[i];
+                    result_len++;
+                    i++;
+                } else {
+                    break;
+                }
+            }
+
+            return result_len;
+        }
     }
+
 }
