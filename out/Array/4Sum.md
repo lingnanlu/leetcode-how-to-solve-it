@@ -1,31 +1,49 @@
-package array;
+#4Sum
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+https://leetcode.com/problems/4sum
 
-import java.util.*;
+### 问题描述
 
-@Leetcode(
-        title = "4Sum",
-        category = Category.ARRAY,
-        howToSolveIt = """
-                q. 你遇到过这个问题么？
+<p>Given an array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, are there elements <em>a</em>, <em>b</em>, <em>c</em>, and <em>d</em> in <code>nums</code> such that <em>a</em> + <em>b</em> + <em>c</em> + <em>d</em> = <code>target</code>? Find all unique quadruplets in the array which gives the sum of <code>target</code>.</p>
 
-                a. 之间的3Sum, 只是这里是a + b + c + d= target ，固定其中一个，就可以是3Sum. 我想可以写出来
+<p><strong>Note:</strong></p>
 
-                q. 嗯，这次写的没问题，但这种嵌套for写的很不优雅，而且你发现它们是不是有相同的模式？假如是5Sum呢？
+<p>The solution set must not contain duplicate quadruplets.</p>
 
-                q. 另外，它似乎预示着这样一个规律：4Sum -> 3Sum -> 2Sum. 这种模式能给你什么启发么？
+<p><strong>Example:</strong></p>
 
-                a. 嗯，这种模式和递归很像，所以，使用递归可以简化代码。我试一试。
-                
-                q. 好的。你可以试试使用DFS的思想来
-                
-                a. 写出DFS的解法. 
-                
-                """
-)
+<pre>
+Given array nums = [1, 0, -1, 0, -2, 2], and target = 0.
+
+A solution set is:
+[
+  [-1,  0, 0, 1],
+  [-2, -1, 1, 2],
+  [-2,  0, 0, 2]
+]
+</pre>
+
+### 解题思路
+
+q. 你遇到过这个问题么？
+
+a. 之间的3Sum, 只是这里是a + b + c + d= target ，固定其中一个，就可以是3Sum. 我想可以写出来
+
+q. 嗯，这次写的没问题，但这种嵌套for写的很不优雅，而且你发现它们是不是有相同的模式？假如是5Sum呢？
+
+q. 另外，它似乎预示着这样一个规律：4Sum -> 3Sum -> 2Sum. 这种模式能给你什么启发么？
+
+a. 嗯，这种模式和递归很像，所以，使用递归可以简化代码。我试一试。
+
+q. 好的。你可以试试使用DFS的思想来
+
+a. 写出DFS的解法.
+
+
+
+### 代码
+
+```java
 public class Four_Sum {
 
     @Solution("嵌套写法")
@@ -263,3 +281,4 @@ public class Four_Sum {
         System.out.println( new DFS().fourSum(nums, 0));
     }
 }
+```
