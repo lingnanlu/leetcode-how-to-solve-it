@@ -4,8 +4,8 @@ import elder.Category;
 import elder.Leetcode;
 
 @Leetcode(
-        title = "",
-        category = Category.ARRAY,
+        title = "Permutation Sequence",
+        category = Category.TODO,
         tag = "todo",
         howToSolveIt = "偏智力tricky题"
 )

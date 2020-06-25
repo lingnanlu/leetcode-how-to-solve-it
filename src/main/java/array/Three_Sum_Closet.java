@@ -5,10 +5,6 @@ import elder.Leetcode;
 
 import java.util.Arrays;
 
-/**
- * 你能不能解决一个更简单的问题，2个怎样？
- * 你能利用更简单问题的方法么？ 或者利用结果？
- */
 
 @Leetcode(
         title = "3Sum Closest",

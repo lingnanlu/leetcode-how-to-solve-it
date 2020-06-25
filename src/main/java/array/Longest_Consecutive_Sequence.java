@@ -20,6 +20,7 @@ import java.util.Set;
         title = "Longest Consecutive Sequence",
         category = Category.ARRAY,
         tag = "这个题的本质和two sum一样，就是快速判断某一个数是否在数组当中",
+        relatedTopics = {"two sum"},
         howToSolveIt = """
                 q 已知是什么，未知是什么
                                 
