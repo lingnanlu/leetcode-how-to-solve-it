@@ -7,7 +7,7 @@ import elder.Solution;
 import java.util.*;
 
 @Leetcode(
-        title = "4Sum",
+        title = "4sum",
         category = Category.ARRAY,
         howToSolveIt = """
                 q. 你遇到过这个问题么？

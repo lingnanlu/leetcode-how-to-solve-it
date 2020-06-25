@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 
 @Leetcode(
-        title = "3Sum Three_Sum_Closeset",
+        title = "3Sum Closest",
         category = Category.ARRAY,
         howToSolveIt = """
                 q 你之前遇到过类似的问题么
