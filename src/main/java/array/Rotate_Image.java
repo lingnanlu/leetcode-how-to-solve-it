@@ -1,5 +1,17 @@
-package medium;
+package array;
 
+import elder.Category;
+import elder.Leetcode;
+
+@Leetcode(
+        title = "Rotate Image",
+        category = Category.ARRAY,
+        howToSolveIt = """
+                思路一：使用另一个维数组进行辅助操作
+                
+                思路二：其实和Rotate Array一样，都是将Rotate操作，转化为容易实现的操作，只是这种转化的逻辑比较triky.
+                """
+)
 public class Rotate_Image {
 
     // 至于怎么翻转, 实在想不到, 纯靠记忆记住吧, 先副后中, 关键是你能不能快速的操作下标

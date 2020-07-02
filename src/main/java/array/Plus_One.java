@@ -1,5 +1,15 @@
-package easy;
+package array;
 
+import elder.Category;
+import elder.Leetcode;
+
+@Leetcode(
+        title = "Plus One",
+        category = Category.ARRAY,
+        howToSolveIt = """
+                没什么可说的，纯粹模拟加法操作
+                """
+)
 public class Plus_One {
 
     public int[] plusOne(int[] digits) {
