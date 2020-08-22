@@ -1,7 +1,6 @@
 package sort;
 
 import common.ListTool;
-import list.ListNode;
 
 public class Insertion_Sort_List {
 

@@ -1,7 +1,5 @@
 package common;
 
-import list.ListNode;
-
 public class ListTool {
 
     public static ListNode build(int... vals) {

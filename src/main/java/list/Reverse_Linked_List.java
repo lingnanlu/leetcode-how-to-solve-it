@@ -1,64 +1,62 @@
 package list;
 
+import elder.Category;
+import elder.Leetcode;
+import elder.Solution;
+
+@Leetcode(
+        title = "Reverse Linked List",
+        category = Category.LIST,
+        howToSolveIt = """
+                方法一：新建一个list，不断头部插
+                
+                关键是搞清楚使用几个指针，最好用图来模拟一遍就行。
+                
+                方法二：递归的方法，要注意，递归之后返回的是新链表的头head,但原来的head呢？
+                
+                这个问题的回答，可以自己来模拟递归，然后递归到最后一层，其实你可以控制将原来的head指向tail.
+                
+                """
+)
 public class Reverse_Linked_List {
 
-    // 1. 新建一个链表, 不断的从原链表拿一个结点过来, 往新链表表头插
-    // 传入的head最后变成了新链表的最后一个元素.
-    public ListNode reverseList(ListNode head) {
+    @Solution("迭代的方式")
+    static class InsertIntoTheHead {
 
-        ListNode newP = null;
+        public list.ListNode reverseList(list.ListNode head) {
 
-        //取第一个结点
-        ListNode p = head;
-        if(head != null) head = head.next;
+            if(head == null) return null;
 
-        //p表示所取的结点
-        while(p != null) {
+            list.ListNode q = null;
 
-            //查入到新链表中.
-            p.next = newP;
-            newP = p;
+            // p是迭代指针，从第一下，迭代到null
+            for(list.ListNode p = head, tmp = null; p != null;) {
 
-            //再取一个
-            p = head;
-            if(head != null) head = head.next;
+                // 摘下p，tmp指向摘下的node
+                tmp = p;
+                p = p.next;
+                tmp.next = null;
+
+                // 将tmp插入新list中
+                tmp.next = q;
+                q = tmp;
+            }
+
+            return q;
         }
-
-        return newP;
     }
 
-    //
-    //
+    @Solution("递归的方式")
+    static class Reverse {
+        public list.ListNode reverseList(list.ListNode head) {
+            if (head == null || head.next == null) return head;
+            ListNode reversed = reverseList(head.next);
 
-    /**
-     * 递归的方式
-     * 其实理解递归的关键是, 返回的是reverse的, 但原来做为头部的结点现在变成了尾结点
-     */
-    public ListNode reverseList2(ListNode head) {
-
-        if (head == null || head.next == null) return head;
-        ListNode reversed = reverseList2(head.next);
-        head.next.next = head;
-        head.next = null;
-        return reversed;
-
+            //head.next现在成了子list的tail.
+            head.next.next = head;
+            head.next = null;
+            return reversed;
+        }
     }
 
-
-
-    //从list中取走头结点, 如果头部有一个空结点, 还好说, 但没有空结点, 怎么办?
-    // javd sdk中的LinkedList不单单是一个Node对象, 外面还有一层LinkedList
-//    private static void takeNode(ListNode head) {
-//        head = head.next;
-//    }
-
-//    public static void main(String[] args) {
-//
-//        ListNode a = new ListNode(1);
-//        ListNode b = new ListNode(2);
-//        a.next = b;
-//        takeNode(a);
-//
-//        System.out.println(a);
-//    }
 }

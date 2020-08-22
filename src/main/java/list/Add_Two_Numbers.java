@@ -1,5 +1,15 @@
 package list;
 
+import elder.Category;
+import elder.Leetcode;
+
+@Leetcode(
+        title = "Add Two Numbers",
+        category = Category.LIST,
+        howToSolveIt = """
+                一道模拟操作题，没什么意思，细心，关注一下边界条件就行。
+                """
+)
 public class Add_Two_Numbers {
 
     // 将l2加到l1, 和将l1加到l2一样, 无区别

@@ -1,7 +1,6 @@
 package sort;
 
 import common.ListTool;
-import list.ListNode;
 
 /**
  * 常量空间以及nlogn只有归并了。

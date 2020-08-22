@@ -1,5 +1,22 @@
 package list;
 
+import elder.Category;
+import elder.Leetcode;
+
+@Leetcode(
+        title = "Swap Nodes in Pairs",
+        category = Category.LIST,
+        howToSolveIt = """
+                又这是一个模拟操作的题，在纸上理清各个指针的操作即可，要细心一些。
+                
+                这题还有另外一种思路，就是交换相邻节点的值，这是又一种比较trick的方式。
+                
+                更一般化是交换相接的n个，此时可以写出通用的方式，这就是解决一个通用的问题和解决一个特殊问题不同的地方。
+                
+                见Reverse Nodes in k-Group
+                """,
+        relatedTopics = "Reverse Nodes in k-Group"
+)
 public class Swap_Nodes_In_Pairs {
 
     /**

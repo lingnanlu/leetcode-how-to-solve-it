@@ -1,5 +1,14 @@
 package list;
 
+import elder.Category;
+import elder.Leetcode;
+@Leetcode(
+        title = "Partition List",
+        category = Category.LIST,
+        howToSolveIt = """
+                思路比较直观，使用两个新的链表，一个保存小的，一个保存大的，然后拼接起来
+                """
+)
 public class Partition_List {
     public ListNode partition(ListNode head, int x) {
 

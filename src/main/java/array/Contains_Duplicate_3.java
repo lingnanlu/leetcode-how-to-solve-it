@@ -98,6 +98,9 @@ public class Contains_Duplicate_3 {
             if(i >= k) set.remove(nums[i - k]);
 
         }
+
+        return true;
+
     }
 
 }

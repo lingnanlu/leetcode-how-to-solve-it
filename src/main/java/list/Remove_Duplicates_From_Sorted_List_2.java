@@ -1,82 +1,61 @@
 package list;
 
-import common.ListTool;
+import elder.Category;
+import elder.Leetcode;
 
+@Leetcode(
+        title = "Remove Duplicates from Sorted List II",
+        category = Category.LIST,
+        howToSolveIt = """
+                
+                这题依然不难，因为你能在纸上很自然的写写画画就写出来了。
+                
+                关键是清晰的把你的过程用程序来表达出来。这就需要清楚的明白，每一个变量是什么含义。
+                
+                注意不变式的作用，或者说断言的作用，你的代码就是要让断言为真。
+                
+                再结合你的模拟的思路，就能一遍写对了。
+                
+                
+                """
+)
 public class Remove_Duplicates_From_Sorted_List_2 {
 
-    /**
-     * 1. 一种简单的方式是， 先遍历一遍， 找到重复元素， 第二遍遍历时， 跳过重复元素。
-     * 2。 另一种方式是， 使用一个p来遍历这个list, 如果p所指的元素是单例元素， 则插入到新list中， 这里的关键点是判断p所指的是不是单例元素
-     * @param head
-     * @return
-     */
-    public static ListNode deleteDuplicates2(ListNode head) {
+    public ListNode deleteDuplicates(ListNode head) {
 
-        ListNode result = new ListNode(-1);
-        ListNode tail = result;
-        ListNode pre = null;
+        if (head == null || head.next == null) return head;
+
+        ListNode dummy = new ListNode(0);         // 结果list的尾结点
+        ListNode tail = dummy;
         ListNode p = head;
+        ListNode q = head.next;
 
+        // 不变式，一直保持q是p的下一个元素，如果q和p不等，就说明p是单一元素。
         while(p != null) {
-
-            if ((pre == null && p.next == null) ||              // 如果只有一个元素
-                    (pre == null && p.val != p.next.val) ||     // 如果有多个元素， 在开头
-                    (p.next == null && pre.val != p.val) ||     // 如果有多个元素， 在结尾
-                    (pre.val != p.val && p.val != p.next.val)   // 如果有多个元素， 在中间
-            ) {
-                // 不能使用这种方式，因为摘下来之后， 相当于这个元素没了。
-                // 摘下来
-                ListNode node = p;
-                p = p.next;
-                node.next = null;
-
+            // 此时，由不变式可知、q是p的下一个元素。
+            if(q == null || p.val != q.val) {
+                //说明p所指元素不重复
                 tail.next = p;
                 tail = p;
+                p = q;
+                if(q != null) {
+                    q = q.next;
+                }
             } else {
-                pre = p;
-                p = p.next;
-            }
-
-        }
-
-        return result.next;
-    }
-
-    // 因为是单链表， 不能往前看， 所发要有一个地方记录其是否曾经重复过。
-    public static ListNode deleteDuplicates(ListNode head) {
-
-        ListNode result = new ListNode(-1);
-        ListNode tail = result;
-        ListNode p = head;
-        boolean duplicate = false;      //代表p所指的元素之前有没有出现过。
-
-        while(p != null) {
-            if(p.next != null && p.val == p.next.val) {
-                duplicate = true;       //说明p所指的元素之前出现过
-                p = p.next;
-            } else {                //这里说明p和它后面的元素不同， 如果后面没有元素， 也是认为不同的。
-                if(duplicate) {     //p和后一个元素不同， 但出现过， 所以跳过
-                    p = p.next;
-                } else {            //这里说明p所指元素没有出现过， 且和后一个不同
-                    ListNode node = p;
-                    p = p.next;
-                    node.next = null;
-
-                    tail.next = node;
-                    tail = node;
+                // 此时，p，q相同，需要跳过p,q所指元素，想办法回归到不变式
+                while(q != null && p.val == q.val) {
+                    q = q.next;
                 }
 
-                duplicate = false;      // 因为p已经移到了后一个不同的元素， 该元素还没出现过， 所以设置成false.
+                // 此时，跳过p，q所指的那段重复元素，又回到了不变式
+                p = q;
+                if(q != null) {
+                    q = q.next;
+                }
             }
         }
 
-        return result.next;
-    }
-
-    public static void main(String[] args) {
-        ListNode test = ListTool.build(1, 2, 3, 3, 4, 4, 5);
-        System.out.println(ListTool.print(test));
-
-        deleteDuplicates(test);
+        tail.next = null;
+        return dummy.next;
     }
 }

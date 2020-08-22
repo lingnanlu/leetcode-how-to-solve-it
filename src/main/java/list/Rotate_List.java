@@ -1,44 +1,43 @@
 package list;
 
+
+import elder.Category;
+import elder.Leetcode;
+
+@Leetcode(
+        title = "Rotate List",
+        category = Category.LIST,
+        howToSolveIt = """
+                又是一个模拟题，比较简单，意义不大.
+                
+                先遍历一遍，得出链表长度 len ，注意 k 可能大于 len ，因此令 k %= len 。将尾节点next指针指向首 节点，形成一个环，
+                接着往后跑 len-k 步，从这里断开，就是要求的结果了。
+                """
+)
 public class Rotate_List {
 
-    // 其实就是将原来的list分成两个部分， 然后重新链接起来。
-    public ListNode rotateRight(ListNode head, int k) {
+    public ListNode rotateRight(ListNode head, int k) { if (head == null || k == 0) return head;
 
-        if(head == null) return null;
+        int len = 1;
 
-        int length = 0;
-        // length表示 的是[0, p)区间的list的长度
-        for(ListNode p = head; p != null; p = p.next) {
-            length++;
+        ListNode p = head; while (p.next != null) { // 求长度
+
+            len++;
+
+            p = p.next; }
+
+        k = len - k % len;
+
+        p.next = head; // 首尾相连
+
+        for(int step = 0; step < k; step++) {
+
+            p = p.next; //接着往后跑
+
         }
-
-        int moveStep = k % length;
-
-        if(moveStep == 0) return head;
-
-        // p指向的是第i个结点
-        ListNode p = head;
-        int i = 1;
-
-        while(i != length - moveStep) {
-            i++;
-            p = p.next;
-        }
-
-        //此时p指向的是第length - moveStep个结点, 将链表分成两部分
-        ListNode newhead = p.next;
-        p.next = null;
-
-        p = newhead;
-        while(p.next != null) {
-            p = p.next;
-        }
-
-        p.next = head;
-
-        return newhead;
-
+        head = p.next; // 新的首节点
+        p.next = null; // 断开环
+        return head;
 
     }
 }
