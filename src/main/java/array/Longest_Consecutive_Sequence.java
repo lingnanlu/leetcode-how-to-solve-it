@@ -8,14 +8,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * 找最长的连续数列
- * <p>
- * 可以先排序， 这是O(nlogn)
- * <p>
- * 如果要求O(n), 可能需要hash表
- */
-
 @Leetcode(
         title = "Longest Consecutive Sequence",
         category = Category.ARRAY,

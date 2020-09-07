@@ -1,12 +1,16 @@
-package easy;
+package string;
 
+import elder.Category;
+import elder.Leetcode;
+
+@Leetcode(
+        title = "Valid Palindrome",
+        category = Category.STRING,
+        howToSolveIt = """
+                其实就是两个指针，左右对比，这个比较简单，很容易想到
+                """
+)
 public class Valid_Palindrome {
-
-    public static void main(String[] args) {
-        Valid_Palindrome test = new Valid_Palindrome();
-
-        System.out.println(test.isPalindrome("OP"));
-    }
 
     public boolean isPalindrome(String s) {
 
@@ -14,11 +18,11 @@ public class Valid_Palindrome {
         int j = s.length() - 1;
         while (i <= j) {
 
-            while(i < s.length() && !Character.isLetterOrDigit(s.charAt(i))) {
+            while (i < s.length() && !Character.isLetterOrDigit(s.charAt(i))) {
                 i++;
             }
 
-            while(j >= 0 && !Character.isLetterOrDigit(s.charAt(j))) {
+            while (j >= 0 && !Character.isLetterOrDigit(s.charAt(j))) {
                 j--;
             }
 

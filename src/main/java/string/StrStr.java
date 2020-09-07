@@ -1,5 +1,16 @@
-package easy;
+package string;
 
+import elder.Category;
+import elder.Leetcode;
+
+@Leetcode(
+        title = "Implement strStr()",
+        category = Category.STRING,
+        howToSolveIt = """
+                这里面试的话，使用暴力方法就行，也就是最直观的那个。注意思路一定要清晰。
+                
+                """
+)
 public class StrStr {
 
     public int strStr(String haystack, String needle) {

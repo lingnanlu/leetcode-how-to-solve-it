@@ -94,6 +94,10 @@ public class Copy_List_with_Random_Pointer {
         cur->next->random = cur->random->next;
 
         这里的 cur 是原链表中结点，cur->next 则为拷贝链表的结点，cur->next->random 则为拷贝链表的 random 指针。cur->random 为原链表结点的 random 指针指向的结点，因为其指向的还是原链表的结点，所以我们要再加个 next，才能指向拷贝链表的结点。最后再遍历一次，就是要把原链表和拷贝链表断开即可，参见代码如下：
+
+         https://www.cnblogs.com/grandyang/p/4261431.html
          */
+
+
     }
 }
