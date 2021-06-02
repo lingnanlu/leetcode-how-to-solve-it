@@ -131,7 +131,7 @@ public class Next_Permutation {
 
             if(i < 0) {
                 // 说明整个序列是倒序的，这时反向排序就行
-                Arrays.sort(nums);
+                Arrays.question.sort(nums);
             } else {
                 // 找第一个比num[i]大的元素
                 int j = nums.length - 1;
@@ -141,7 +141,7 @@ public class Next_Permutation {
                 nums[i] = nums[j];
                 nums[j] = temp;
 
-                Arrays.sort(nums, i + 1, nums.length);
+                Arrays.question.sort(nums, i + 1, nums.length);
 
             }
         }

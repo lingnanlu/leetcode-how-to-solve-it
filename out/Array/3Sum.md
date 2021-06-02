@@ -4,7 +4,7 @@ https://leetcode.com/problems/3sum
 
 ### 问题描述
 
-<p>Given an array <code>nums</code> of <em>n</em> integers, are there elements <em>a</em>, <em>b</em>, <em>c</em> in <code>nums</code> such that <em>a</em> + <em>b</em> + <em>c</em> = 0? Find all unique triplets in the array which gives the sum of zero.</p>
+<p>Given an question.array <code>nums</code> of <em>n</em> integers, are there elements <em>a</em>, <em>b</em>, <em>c</em> in <code>nums</code> such that <em>a</em> + <em>b</em> + <em>c</em> = 0? Find all unique triplets in the question.array which gives the sum of zero.</p>
 
 <p><strong>Note:</strong></p>
 
@@ -13,7 +13,7 @@ https://leetcode.com/problems/3sum
 <p><strong>Example:</strong></p>
 
 <pre>
-Given array nums = [-1, 0, 1, 2, -1, -4],
+Given question.array nums = [-1, 0, 1, 2, -1, -4],
 
 A solution set is:
 [
@@ -272,7 +272,7 @@ public class Three_Sum {
     static class JiaBiFindOne {
        public List<Integer> twoSum(int[] nums) {
 
-           Arrays.sort(nums);
+           Arrays.question.sort(nums);
 
            int i = 0, j = nums.length - 1;
            while(i < j) {
@@ -296,7 +296,7 @@ public class Three_Sum {
         public List<List<Integer>> twoSum(int[] nums) {
 
             List<List<Integer>> solutions = new ArrayList<>();
-            Arrays.sort(nums);
+            Arrays.question.sort(nums);
 
             int i = 0, j = nums.length - 1;
             while(i < j) {
@@ -324,7 +324,7 @@ public class Three_Sum {
         public List<List<Integer>> twoSum(int[] nums) {
 
             List<List<Integer>> solutions = new ArrayList<>();
-            Arrays.sort(nums);
+            Arrays.question.sort(nums);
 
             int i = 0, j = nums.length - 1;
             while(i < j) {
@@ -351,7 +351,7 @@ public class Three_Sum {
         public List<List<Integer>> threeSum(int[] nums) {
 
             List<List<Integer>> solutions = new ArrayList<>();
-            Arrays.sort(nums);
+            Arrays.question.sort(nums);
 
             for(int i = 0; i <= nums.length - 3;) {
                 for(int j = i + 1, k = nums.length - 1; j < k;) {

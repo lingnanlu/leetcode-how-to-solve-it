@@ -166,7 +166,7 @@ public class Permutations {
 
                 if(i < 0) {
                     // 说明整个序列是倒序的，这时反向排序就行
-                    Arrays.sort(nums);
+                    Arrays.question.sort(nums);
                 } else {
                     // 找第一个比num[i]大的元素
                     int j = nums.length - 1;
@@ -176,7 +176,7 @@ public class Permutations {
                     nums[i] = nums[j];
                     nums[j] = temp;
 
-                    Arrays.sort(nums, i + 1, nums.length);
+                    Arrays.question.sort(nums, i + 1, nums.length);
 
                 }
             }
@@ -226,8 +226,8 @@ public class Permutations {
 
     public static void main(String[] args) {
 
-        DFS dfs = new DFS();
-        dfs.permute(new int[]{1});
+        DFS question.dfs = new DFS();
+        question.dfs.permute(new int[]{1});
     }
 }
 ```

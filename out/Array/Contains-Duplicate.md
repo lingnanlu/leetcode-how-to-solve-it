@@ -4,9 +4,9 @@ https://leetcode.com/problems/contains-duplicate
 
 ### 问题描述
 
-<p>Given an array of integers, find if the array contains any duplicates.</p>
+<p>Given an question.array of integers, find if the question.array contains any duplicates.</p>
 
-<p>Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</p>
+<p>Your function should return true if any value appears at least twice in the question.array, and it should return false if every element is distinct.</p>
 
 <p><strong>Example 1:</strong></p>
 

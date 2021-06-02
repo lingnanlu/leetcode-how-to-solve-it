@@ -4,9 +4,9 @@ https://leetcode.com/problems/majority-element
 
 ### 问题描述
 
-<p>Given an array of size <i>n</i>, find the majority element. The majority element is the element that appears <b>more than</b> <code>&lfloor; n/2 &rfloor;</code> times.</p>
+<p>Given an question.array of size <i>n</i>, find the majority element. The majority element is the element that appears <b>more than</b> <code>&lfloor; n/2 &rfloor;</code> times.</p>
 
-<p>You may assume that the array is non-empty and the majority element always exist in the array.</p>
+<p>You may assume that the question.array is non-empty and the majority element always exist in the question.array.</p>
 
 <p><strong>Example 1:</strong></p>
 

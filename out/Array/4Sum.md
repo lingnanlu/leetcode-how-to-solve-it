@@ -4,7 +4,7 @@ https://leetcode.com/problems/4sum
 
 ### 问题描述
 
-<p>Given an array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, are there elements <em>a</em>, <em>b</em>, <em>c</em>, and <em>d</em> in <code>nums</code> such that <em>a</em> + <em>b</em> + <em>c</em> + <em>d</em> = <code>target</code>? Find all unique quadruplets in the array which gives the sum of <code>target</code>.</p>
+<p>Given an question.array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, are there elements <em>a</em>, <em>b</em>, <em>c</em>, and <em>d</em> in <code>nums</code> such that <em>a</em> + <em>b</em> + <em>c</em> + <em>d</em> = <code>target</code>? Find all unique quadruplets in the question.array which gives the sum of <code>target</code>.</p>
 
 <p><strong>Note:</strong></p>
 
@@ -13,7 +13,7 @@ https://leetcode.com/problems/4sum
 <p><strong>Example:</strong></p>
 
 <pre>
-Given array nums = [1, 0, -1, 0, -2, 2], and target = 0.
+Given question.array nums = [1, 0, -1, 0, -2, 2], and target = 0.
 
 A solution set is:
 [
@@ -53,7 +53,7 @@ public class Four_Sum {
         public List<List<Integer>> fourSum(int[] nums, int target){
 
             List<List<Integer>> solutions = new ArrayList<>();
-            Arrays.sort(nums);
+            Arrays.question.sort(nums);
 
             for(int h = 0; h <= nums.length - 4;) {
                 for(int i = h + 1; i <= nums.length - 3;) {
@@ -87,7 +87,7 @@ public class Four_Sum {
     static class FourSumRecursive {
 
         public List<List<Integer>> fourSum(int[] nums, int target) {
-            Arrays.sort(nums);
+            Arrays.question.sort(nums);
             return kSum(nums, target, 4, 0);
         }
 
@@ -131,7 +131,7 @@ public class Four_Sum {
     static class DFS {
 
         public List<List<Integer>> fourSum(int[] nums, int target) {
-            Arrays.sort(nums);
+            Arrays.question.sort(nums);
             Tree tree = new Tree(nums, 4, target);
             Path path = new Path(4);
             // 一个启动节点，作为根，目的是要启动整个流程

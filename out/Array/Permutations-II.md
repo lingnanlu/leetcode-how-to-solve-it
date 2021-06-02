@@ -142,7 +142,7 @@ public class Permutations_II {
         }
 
         public List<List<Integer>> permuteUnique(int[] nums) {
-            Arrays.sort(nums);
+            Arrays.question.sort(nums);
             Node node = new Node(0, -1);
             Path path = new Path();
             List<List<Integer>> permutations = new ArrayList<>();
@@ -153,8 +153,8 @@ public class Permutations_II {
     }
 
     public static void main(String[] args) {
-        DFS dfs = new DFS();
-        dfs.permuteUnique(new int[]{1, 1, 2});
+        DFS question.dfs = new DFS();
+        question.dfs.permuteUnique(new int[]{1, 1, 2});
     }
 
 

@@ -4,9 +4,9 @@ https://leetcode.com/problems/remove-element
 
 ### 问题描述
 
-<p>Given an array <em>nums</em> and a value <em>val</em>, remove all instances of that value <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a> and return the new length.</p>
+<p>Given an question.array <em>nums</em> and a value <em>val</em>, remove all instances of that value <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a> and return the new length.</p>
 
-<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></strong> with O(1) extra memory.</p>
+<p>Do not allocate extra space for another question.array, you must do this by <strong>modifying the input question.array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></strong> with O(1) extra memory.</p>
 
 <p>The order of elements can be changed. It doesn&#39;t matter what you leave beyond the new length.</p>
 
@@ -33,9 +33,9 @@ It doesn&#39;t matter what values are set beyond&nbsp;the returned length.</pre>
 
 <p><strong>Clarification:</strong></p>
 
-<p>Confused why the returned value is an integer but your answer is an array?</p>
+<p>Confused why the returned value is an integer but your answer is an question.array?</p>
 
-<p>Note that the input array is passed in by <strong>reference</strong>, which means modification to the input array will be known to the caller as well.</p>
+<p>Note that the input question.array is passed in by <strong>reference</strong>, which means modification to the input question.array will be known to the caller as well.</p>
 
 <p>Internally you can think of this:</p>
 

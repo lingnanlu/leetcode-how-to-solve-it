@@ -4,7 +4,7 @@ https://leetcode.com/problems/move-zeroes
 
 ### 问题描述
 
-<p>Given an array <code>nums</code>, write a function to move all <code>0</code>&#39;s to the end of it while maintaining the relative order of the non-zero elements.</p>
+<p>Given an question.array <code>nums</code>, write a function to move all <code>0</code>&#39;s to the end of it while maintaining the relative order of the non-zero elements.</p>
 
 <p><b>Example:</b></p>
 
@@ -15,7 +15,7 @@ https://leetcode.com/problems/move-zeroes
 <p><b>Note</b>:</p>
 
 <ol>
-	<li>You must do this <b>in-place</b> without making a copy of the array.</li>
+	<li>You must do this <b>in-place</b> without making a copy of the question.array.</li>
 	<li>Minimize the total number of operations.</li>
 </ol>
 ### 解题思路

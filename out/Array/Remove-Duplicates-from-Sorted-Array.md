@@ -1,12 +1,12 @@
 #Remove Duplicates from Sorted Array
 
-https://leetcode.com/problems/remove-duplicates-from-sorted-array
+https://leetcode.com/problems/remove-duplicates-from-sorted-question.array
 
 ### 问题描述
 
-<p>Given a sorted array <em>nums</em>, remove the duplicates <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a> such that each element appear only <em>once</em> and return the new length.</p>
+<p>Given a sorted question.array <em>nums</em>, remove the duplicates <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a> such that each element appear only <em>once</em> and return the new length.</p>
 
-<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></strong> with O(1) extra memory.</p>
+<p>Do not allocate extra space for another question.array, you must do this by <strong>modifying the input question.array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></strong> with O(1) extra memory.</p>
 
 <p><strong>Example 1:</strong></p>
 
@@ -29,9 +29,9 @@ It doesn&#39;t matter what values are set beyond&nbsp;the returned length.
 
 <p><strong>Clarification:</strong></p>
 
-<p>Confused why the returned value is an integer but your answer is an array?</p>
+<p>Confused why the returned value is an integer but your answer is an question.array?</p>
 
-<p>Note that the input array is passed in by <strong>reference</strong>, which means modification to the input array will be known to the caller as well.</p>
+<p>Note that the input question.array is passed in by <strong>reference</strong>, which means modification to the input question.array will be known to the caller as well.</p>
 
 <p>Internally you can think of this:</p>
 

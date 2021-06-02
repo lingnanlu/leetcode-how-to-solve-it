@@ -4,7 +4,7 @@ https://leetcode.com/problems/two-sum
 
 ### 问题描述
 
-<p>Given an array of integers, return <strong>indices</strong> of the two numbers such that they add up to a specific target.</p>
+<p>Given an question.array of integers, return <strong>indices</strong> of the two numbers such that they add up to a specific target.</p>
 
 <p>You may assume that each input would have <strong><em>exactly</em></strong> one solution, and you may not use the <em>same</em> element twice.</p>
 
@@ -132,7 +132,7 @@ public class Two_Sum {
     class UsingBinarySearch {
         public int[] twoSum(int[] nums, int target) {
 
-            Arrays.sort(nums);
+            Arrays.question.sort(nums);
 
             for (int i = 0; i <= nums.length - 2; i++) {
                 int a = nums[i];
@@ -153,7 +153,7 @@ public class Two_Sum {
 
             Tuple[] numWithIndex = Tuple.buildFrom(nums);
 
-            Arrays.sort(numWithIndex, Tuple.comparator);
+            Arrays.question.sort(numWithIndex, Tuple.comparator);
 
             for (int i = 0; i <= numWithIndex.length - 2; i++) {
                 int a = numWithIndex[i].data;

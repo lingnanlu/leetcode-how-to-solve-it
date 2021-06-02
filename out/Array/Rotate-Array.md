@@ -1,10 +1,10 @@
 #Rotate Array
 
-https://leetcode.com/problems/rotate-array
+https://leetcode.com/problems/rotate-question.array
 
 ### 问题描述
 
-<p>Given an array, rotate the array to the right by <em>k</em> steps, where&nbsp;<em>k</em>&nbsp;is non-negative.</p>
+<p>Given an question.array, rotate the question.array to the right by <em>k</em> steps, where&nbsp;<em>k</em>&nbsp;is non-negative.</p>
 
 <p><strong>Follow up:</strong></p>
 

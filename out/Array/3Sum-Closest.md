@@ -4,7 +4,7 @@ https://leetcode.com/problems/3sum-closest
 
 ### 问题描述
 
-<p>Given an array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, find three integers in <code>nums</code>&nbsp;such that the sum is closest to&nbsp;<code>target</code>. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
+<p>Given an question.array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, find three integers in <code>nums</code>&nbsp;such that the sum is closest to&nbsp;<code>target</code>. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
 
 <p>&nbsp;</p>
 <p><strong>Example 1:</strong></p>
@@ -52,7 +52,7 @@ public class Three_Sum_Closet {
 
     static class Right {
         public int threeSumClosest(int[] nums, int target) {
-            Arrays.sort(nums);
+            Arrays.question.sort(nums);
 
             int closetGap = Integer.MAX_VALUE;
             int closetSum = 0;
@@ -82,7 +82,7 @@ public class Three_Sum_Closet {
     static class Wrong {
         // 这里的做法是错误的，数轴上的从一个方向逼近就是一种错误的想法，并不是从一个方向进行逼近，而是一会从左，一会从右。
         public int threeSumClosest(int[] nums, int target) {
-            Arrays.sort(nums);
+            Arrays.question.sort(nums);
 
             int minGap = Integer.MAX_VALUE;                 // 记录全局的最小gap
             int minSum = 0;                                 // 记录全局最小gap的值。

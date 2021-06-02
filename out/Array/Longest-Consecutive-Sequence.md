@@ -4,7 +4,7 @@ https://leetcode.com/problems/longest-consecutive-sequence
 
 ### 问题描述
 
-<p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.</p>
+<p>Given an unsorted question.array of integers, find the length of the longest consecutive elements sequence.</p>
 
 <p>Your algorithm should run in O(<em>n</em>) complexity.</p>
 
@@ -68,7 +68,7 @@ public class Longest_Consecutive_Sequence {
         public int longestConsecutive(int[] nums) {
 
             // 1. 排序
-            Arrays.sort(nums);
+            Arrays.question.sort(nums);
 
             // 2. 去重
 
