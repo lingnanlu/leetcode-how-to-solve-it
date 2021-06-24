@@ -1,8 +1,8 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,9 +10,9 @@ import java.util.List;
 
 @Leetcode(
         title = "Permutations",
+        link = "https://leetcode.com/problems/permutations/",
         category = Category.ARRAY,
-        tag = "DFS",
-        howToSolveIt = """
+        how2SolveIt = """
                 q 这个题是找出所有的，你之前有没有遇到过类似的
                 
                 a 有，就是找出下一个
@@ -30,11 +30,12 @@ import java.util.List;
                 a DFS, 整个探索过程可以是一颗树。
                 
                 q 好，使用DFS来写一下吧
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Permutations {
 
-    @Solution("使用DFS")
+    @Solution(name = "使用DFS")
     static class DFS {
 
         static class Node {
@@ -125,7 +126,7 @@ public class Permutations {
         }
     }
 
-    @Solution("使用NextPermutatiion")
+    @Solution(name = "使用NextPermutatiion")
     static class UsingNextPermutation {
         private void nextPermutation(int[] nums) {
 
@@ -209,9 +210,4 @@ public class Permutations {
 
     }
 
-    public static void main(String[] args) {
-
-        DFS question.dfs = new DFS();
-        dfs.permute(new int[]{1});
-    }
 }

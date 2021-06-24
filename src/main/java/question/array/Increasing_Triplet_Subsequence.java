@@ -1,14 +1,14 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
-import elder.Try;
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 @Leetcode(
         title = "Increasing Triplet Subsequence",
-        category = Category.TODO,
-        howToSolveIt = """
+        link = "https://leetcode.com/problems/increasing-triplet-subsequence/",
+        category = Category.UNKNOWN,
+        how2SolveIt = """
                 
                 q
                 
@@ -63,11 +63,12 @@ import elder.Try;
                
                未完待续
                
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Increasing_Triplet_Subsequence {
 
-    @Try("试者先解决两元素的问题")
+    @Solution(name = "试者先解决两元素的问题")
     static class IncreasingDouble {
         public boolean increaingDouble(int[] nums) {
 
@@ -89,7 +90,7 @@ public class Increasing_Triplet_Subsequence {
         }
     }
 
-    @Try("试者先解决两元素的问题，不使用额外空间")
+    @Solution(name = "试者先解决两元素的问题，不使用额外空间")
     static class IncreasingDoubleWithoutConstantSpace {
         public boolean increaingDouble(int[] nums) {
 
@@ -107,7 +108,7 @@ public class Increasing_Triplet_Subsequence {
         }
     }
 
-    @Solution("利用2个元素的思路，解决3元素的问题")
+    @Solution(name = "利用2个元素的思路，解决3元素的问题")
     static class IncreasingTriplet {
         public boolean increasingTriplet(int[] nums) {
 
@@ -138,7 +139,7 @@ public class Increasing_Triplet_Subsequence {
     }
 
 
-    @Try("利用2个元素的思路，解决3元素的问题，不使用额外空间一尝试")
+    @Solution(name = "利用2个元素的思路，解决3元素的问题，不使用额外空间一尝试")
     static class IncreasingTripletWithConstantSpace {
         public boolean increasingTriplet(int[] nums) {
 
@@ -152,7 +153,7 @@ public class Increasing_Triplet_Subsequence {
         }
     }
 
-    @Solution("一种tricky的方式")
+    @Solution(name = "一种tricky的方式")
     static class Tricky {
         public boolean increasingTriplet(int[] nums) {
 

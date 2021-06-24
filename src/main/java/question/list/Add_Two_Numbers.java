@@ -1,14 +1,17 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
+
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Add Two Numbers",
+        link = "https://leetcode.com/problems/add-two-numbers/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 一道模拟操作题，没什么意思，细心，关注一下边界条件就行。
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Add_Two_Numbers {
 

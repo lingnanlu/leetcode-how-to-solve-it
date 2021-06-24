@@ -1,22 +1,24 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 @Leetcode(
         title = "Gas Station",
+        link = "https://leetcode.com/problems/gas-station/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 
                 这题是一个模拟题，题中给出的是数组形式表示的圈，为了更直观一些，画一个圈，标上数组中的数值。
                 就是使用代码来模拟操作，关键是表述清晰
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Gas_Station {
 
-    @Solution("这种方法其实是考察智力的一种方法，其实就是一种数学证明，但感觉这种方法没有参考意义，只能用在这里")
+    @Solution(detail = "这种方法其实是考察智力的一种方法，其实就是一种数学证明，但感觉这种方法没有参考意义，只能用在这里")
     static class Tricky {
         public int canCompleteCircuit(int[] gas, int[] cost) {
 
@@ -45,7 +47,7 @@ public class Gas_Station {
             return total >= 0 ? start : -1;
         }
     }
-    @Solution("模拟的方法， 一个地，一个地的尝试")
+    @Solution(detail = "模拟的方法， 一个地，一个地的尝试")
     static class Simulation {
         public int canCompleteCircuit(int[] gas, int[] cost) {
 

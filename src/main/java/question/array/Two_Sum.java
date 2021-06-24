@@ -1,16 +1,17 @@
 package question.array;
 
-import elder.Best;
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 import java.util.*;
 
 @Leetcode(
         title = "Two Sum",
+        link = "https://leetcode.com/problems/two-sum/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 q. 问题是什么？
 
                 a. 给定一个数组，找两个数，这两个数之各等于一个给定的数。而且这两个数不能是同一个数
@@ -64,7 +65,8 @@ import java.util.*;
                 兴奋中，尝试写下新的答案
              
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Two_Sum {
 
@@ -97,7 +99,7 @@ public class Two_Sum {
         }
     }
 
-    @Solution("暴力方法")
+    @Solution(name = "暴力方法")
     class BruteForce {
         public int[] twoSum(int[] nums, int target) {
 
@@ -115,7 +117,7 @@ public class Two_Sum {
     }
 
 
-    @Solution("使用二分查找")
+    @Solution(name = "使用二分查找")
     class UsingBinarySearch {
         public int[] twoSum(int[] nums, int target) {
 
@@ -133,7 +135,7 @@ public class Two_Sum {
         }
     }
 
-    @Solution("二分查找，保留原来的顺序")
+    @Solution(name = "二分查找，保留原来的顺序")
     class UsingBinarySearchWithTuple {
 
         public int[] twoSum(int[] nums, int target) {
@@ -155,7 +157,7 @@ public class Two_Sum {
         }
     }
 
-    @Best("使用HashMap")
+    @Solution(name = "使用HashMap")
     class UsingHashMap {
         public int[] twoSum(int[] nums, int target) {
 
@@ -190,7 +192,7 @@ public class Two_Sum {
         }
     }
 
-    @Solution("原来答案，思路不太清晰")
+    @Solution(name = "原来答案，思路不太清晰")
     class Bad {
         public int[] twoSum(int[] nums, int target) {
 

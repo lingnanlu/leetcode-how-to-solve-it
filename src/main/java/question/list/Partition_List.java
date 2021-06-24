@@ -1,13 +1,16 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
+
 @Leetcode(
         title = "Partition List",
+        link = "https://leetcode.com/problems/partition-list/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 思路比较直观，使用两个新的链表，一个保存小的，一个保存大的，然后拼接起来
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Partition_List {
     public ListNode partition(ListNode head, int x) {

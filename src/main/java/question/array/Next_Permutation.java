@@ -1,14 +1,15 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 import java.util.Arrays;
 
 @Leetcode(
         title = "Next Permutation",
+        link = "https://leetcode.com/problems/next-permutation/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 
                 q 这个题的要求是什么
                 
@@ -79,7 +80,8 @@ import java.util.Arrays;
                 
                 a 就是一个逆序
                 
-                """
+                """,
+        relatedQuestions = {}
 
 
 )

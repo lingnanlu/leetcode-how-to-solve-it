@@ -1,14 +1,19 @@
 package question.array;
 
 
-import elder.*;
 
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
+
+import javax.annotation.processing.SupportedOptions;
 import java.util.*;
 
 @Leetcode(
         title = "3Sum",
+        link = "https://leetcode.com/problems/3sum/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 q. 问题是什么？
                 
                 a. 找出所有a + b + c = 0, 要求不重复
@@ -109,11 +114,12 @@ import java.util.*;
                 q. 现在你解决了two-sum问题，而threeSum和它基本一样，就是a + b + c = 0,
                 
                 a. 我可以将 a + b + c = 0 => a + b = -c 然后利用同样的方式。
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Three_Sum {
 
-    @Try("试着利用TwoSum结果，但接口不匹配")
+    @Solution(name = "试着利用TwoSum结果，但接口不匹配")
     static class UsingTwoSumResult {
         public int[] threeSum(int[] nums) {
             //target 可以是数组中的任意值，而数组中剩下的元素来找其它两个值
@@ -129,7 +135,7 @@ public class Three_Sum {
         }
     }
 
-    @Try("利用HashMap的方法，返回index")
+    @Solution(name = "利用HashMap的方法，返回index")
     static class UsingHashMapFindOne {
         public int[] threeSum(int[] nums) {
 
@@ -173,7 +179,7 @@ public class Three_Sum {
     }
 
 
-    @Try("利用HashMap思想,返回一组解")
+    @Solution(name = "利用HashMap思想,返回一组解")
     static class UsingHashMapFindOneReturnElement {
 
         public int[] threeSum(int[] nums) {
@@ -210,7 +216,7 @@ public class Three_Sum {
         }
     }
 
-    @Solution("利用HashMap,返回所有解")
+    @Solution(name = "利用HashMap,返回所有解")
     static class UsingHashMapReturnFindALl {
         public List<List<Integer>> threeSum(int[] nums) {
 
@@ -248,7 +254,7 @@ public class Three_Sum {
         }
     }
 
-    @Try("使用夹逼方式，找到a + b = 0,的一个解")
+    @Solution(name = "使用夹逼方式，找到a + b = 0,的一个解")
     static class JiaBiFindOne {
        public List<Integer> twoSum(int[] nums) {
 
@@ -270,7 +276,7 @@ public class Three_Sum {
        }
     }
 
-    @Try("使用夹逼技巧，找到a + b = 0的所有解")
+    @Solution(name = "使用夹逼技巧，找到a + b = 0的所有解")
     static class JiaBiFindAll {
 
         public List<List<Integer>> twoSum(int[] nums) {
@@ -298,7 +304,7 @@ public class Three_Sum {
     }
 
 
-    @Try("使用夹逼技巧，找到a + b = 0的所有解，没有重复")
+    @Solution(name = "使用夹逼技巧，找到a + b = 0的所有解，没有重复")
     static class JiaBiFindAllWithoutDuplicate {
 
         public List<List<Integer>> twoSum(int[] nums) {
@@ -325,7 +331,7 @@ public class Three_Sum {
         }
     }
 
-    @Best("使用夹逼技巧，找到a + b + c= 0的所有解，没有重复")
+    @Solution(name = "使用夹逼技巧，找到a + b + c= 0的所有解，没有重复")
     static class ThreeSumSolution {
 
         public List<List<Integer>> threeSum(int[] nums) {

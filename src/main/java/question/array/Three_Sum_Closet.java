@@ -1,15 +1,17 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 import java.util.Arrays;
 
 
 @Leetcode(
         title = "3Sum Closest",
+        link = "https://leetcode.com/problems/3sum-closest/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 q 你之前遇到过类似的问题么
                 
                 a a + b + c = target
@@ -25,10 +27,12 @@ import java.util.Arrays;
                 q 你能利用a + b + c = b 的思路么，
                 
                 a 我想可以，就是左右夹逼，然后判断gap，找到最小的gap就行。
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Three_Sum_Closet {
 
+    @Solution
     static class Right {
         public int threeSumClosest(int[] nums, int target) {
             Arrays.sort(nums);
@@ -58,6 +62,8 @@ public class Three_Sum_Closet {
         }
 
     }
+
+    @Solution
     static class Wrong {
         // 这里的做法是错误的，数轴上的从一个方向逼近就是一种错误的想法，并不是从一个方向进行逼近，而是一会从左，一会从右。
         public int threeSumClosest(int[] nums, int target) {

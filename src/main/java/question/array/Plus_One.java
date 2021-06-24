@@ -1,14 +1,17 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
+
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Plus One",
+        link = "https://leetcode.com/problems/plus-one/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 没什么可说的，纯粹模拟加法操作
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Plus_One {
 

@@ -1,12 +1,14 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
+
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Remove Duplicates from Sorted List II",
+        link = "https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 
                 这题依然不难，因为你能在纸上很自然的写写画画就写出来了。
                 
@@ -16,8 +18,8 @@ import elder.Leetcode;
                 
                 再结合你的模拟的思路，就能一遍写对了。
                 
-                
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Remove_Duplicates_From_Sorted_List_2 {
 

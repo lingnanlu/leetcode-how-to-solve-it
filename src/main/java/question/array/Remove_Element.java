@@ -1,14 +1,16 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Remove Element",
+        link = "https://leetcode.com/problems/remove-element/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 这题很简单，使用一个指针遍历原数组，另一个指针指向结果数组就行。
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Remove_Element {
 

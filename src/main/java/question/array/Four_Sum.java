@@ -1,15 +1,16 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 import java.util.*;
 
 @Leetcode(
         title = "4sum",
+        link = "https://leetcode.com/problems/4sum/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 q. 你遇到过这个问题么？
 
                 a. 之间的3Sum, 只是这里是a + b + c + d= target ，固定其中一个，就可以是3Sum. 我想可以写出来
@@ -24,11 +25,12 @@ import java.util.*;
                 
                 a. 写出DFS的解法. 
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Four_Sum {
 
-    @Solution("嵌套写法")
+    @Solution(name = "嵌套写法")
     static class FourSumNest {
         public List<List<Integer>> fourSum(int[] nums, int target){
 
@@ -63,7 +65,7 @@ public class Four_Sum {
         }
     }
 
-    @Solution("递归写法")
+    @Solution(name = "递归写法")
     static class FourSumRecursive {
 
         public List<List<Integer>> fourSum(int[] nums, int target) {
@@ -107,7 +109,7 @@ public class Four_Sum {
         }
     }
 
-    @Solution("DFS思想的写法")
+    @Solution(name = "DFS思想的写法")
     static class DFS {
 
         public List<List<Integer>> fourSum(int[] nums, int target) {

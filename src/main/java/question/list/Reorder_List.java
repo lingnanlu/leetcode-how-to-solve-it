@@ -1,18 +1,20 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Reorder List",
+        link = "https://leetcode.com/problems/reorder-list/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 又是一下细节模拟题，按照直观的分三步做就行
                 
                 其实就是三个小问题合成了一个大问题而已。
                 
                 注意这里的一个技巧，使用两步走的方式找中间结点。
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Reorder_List {
 

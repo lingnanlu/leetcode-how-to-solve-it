@@ -1,18 +1,19 @@
 package question.list;
 
-
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Rotate List",
+        link = "https://leetcode.com/problems/rotate-list/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 又是一个模拟题，比较简单，意义不大.
                 
                 先遍历一遍，得出链表长度 len ，注意 k 可能大于 len ，因此令 k %= len 。将尾节点next指针指向首 节点，形成一个环，
                 接着往后跑 len-k 步，从这里断开，就是要求的结果了。
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Rotate_List {
 

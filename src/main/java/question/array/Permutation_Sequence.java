@@ -1,13 +1,15 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
+
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Permutation Sequence",
-        category = Category.TODO,
-        tag = "todo",
-        howToSolveIt = "偏智力tricky题"
+        link = "https://leetcode.com/problems/permutation-sequence/",
+        category = Category.UNKNOWN,
+        how2SolveIt = "偏智力tricky题",
+        relatedQuestions = {}
 )
 public class Permutation_Sequence {
 }

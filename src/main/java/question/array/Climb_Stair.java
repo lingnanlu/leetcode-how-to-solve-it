@@ -1,13 +1,14 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 @Leetcode(
         title = "Climbing Stairs",
+        link = "https://leetcode.com/problems/climbing-stairs/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 这种可以举几个例子，找出规律，然后发现是数学归纳法
                                 
                 这种一般两种思路
@@ -17,12 +18,13 @@ import elder.Solution;
                 二是迭代
                 
                 注意迭代时，可能不需要保存历史数据，这样节约空间
-                """
+                """,
+        relatedQuestions = ""
 )
 
 public class Climb_Stair {
 
-    @Solution("简单的递归")
+    @Solution(name = "简单的递归")
     static class Recursive {
         public int climbStairs(int n) {
 
@@ -43,8 +45,7 @@ public class Climb_Stair {
         }
     }
 
-
-    @Solution("迭代")
+    @Solution(name = "迭代")
     static class Iterate {
         public int climbStairs(int n) {
 
@@ -65,7 +66,10 @@ public class Climb_Stair {
         }
     }
 
-    @Solution("迭代，因为只用到前两次的数据，所以可以不保留历史数据")
+    @Solution(
+            name = "迭代2",
+            detail = "因为只用到前两次的数据，所以可以不保留历史数据"
+    )
     static class IterateWithoutExtraSpace {
         public int climbStairs(int n) {
 

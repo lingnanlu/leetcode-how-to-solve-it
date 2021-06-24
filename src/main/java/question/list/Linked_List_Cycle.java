@@ -1,15 +1,16 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Leetcode(
         title = "Linked List Cycle",
+        link = "https://leetcode.com/problems/linked-list-cycle/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 
                 一种直观的想法是，使用一个set来保存访问过的结点。
                 
@@ -38,7 +39,8 @@ import java.util.Set;
                 
                 可见，跑三步不如跑两步那么容易归纳。
                
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Linked_List_Cycle {
 

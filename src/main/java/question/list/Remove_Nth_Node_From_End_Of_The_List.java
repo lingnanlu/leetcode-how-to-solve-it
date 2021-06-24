@@ -1,14 +1,13 @@
 package question.list;
 
-
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Remove Nth Node From End of List",
+        link = "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
         category = Category.LIST,
-        howToSolveIt = """
-                
+        how2SolveIt = """
                 方法一：
                 
                 这里，要删除的是倒数第N个，另一个类似的问题是删除正数的第N个，正数就比较简单。所以，可以先遍历一遍统计个数，然后将倒数转为正数
@@ -23,7 +22,8 @@ import elder.Leetcode;
                 
                 至于两个指针分别指向哪个，如果想不明白，就举个例子就可以了。
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Remove_Nth_Node_From_End_Of_The_List {
 

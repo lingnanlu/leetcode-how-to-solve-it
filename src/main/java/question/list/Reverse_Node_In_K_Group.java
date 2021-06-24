@@ -1,19 +1,22 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 @Leetcode(
         title = "Reverse Nodes in k-Group",
+        link = "https://leetcode.com/problems/reverse-nodes-in-k-group/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 swap nodes in pairs 的一般化问题，也是一个模拟操作的题，注意指针的含义以及细节。
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Reverse_Node_In_K_Group {
 
-    @Solution("一遍遍历")
+    @Solution(name = "一遍遍历")
     static class Onepass {
         public ListNode reverseKGroup(ListNode head, int k) {
 
@@ -62,7 +65,7 @@ public class Reverse_Node_In_K_Group {
         }
     }
 
-    @Solution("两遍遍历")
+    @Solution(name = "两遍遍历")
     static class TwoPass {
         public ListNode reverseKGroup(ListNode head, int k) {
 

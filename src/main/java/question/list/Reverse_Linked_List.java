@@ -1,13 +1,14 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 @Leetcode(
         title = "Reverse Linked List",
+        link = "https://leetcode.com/problems/reverse-linked-list/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 方法一：新建一个list，不断头部插
                 
                 关键是搞清楚使用几个指针，最好用图来模拟一遍就行。
@@ -16,11 +17,12 @@ import elder.Solution;
                 
                 这个问题的回答，可以自己来模拟递归，然后递归到最后一层，其实你可以控制将原来的head指向tail.
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Reverse_Linked_List {
 
-    @Solution("迭代的方式")
+    @Solution(name = "迭代的方式")
     static class InsertIntoTheHead {
 
         public question.list.ListNode reverseList(question.list.ListNode head) {
@@ -46,7 +48,7 @@ public class Reverse_Linked_List {
         }
     }
 
-    @Solution("递归的方式")
+    @Solution(name = "递归的方式")
     static class Reverse {
         public question.list.ListNode reverseList(question.list.ListNode head) {
             if (head == null || head.next == null) return head;

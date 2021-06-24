@@ -1,18 +1,19 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
+
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Linked List Cycle II",
+        link = "https://leetcode.com/problems/linked-list-cycle-ii/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 
                 见https://www.cnblogs.com/hiddenfox/p/3408931.html中的解释。
                 
-                
-               
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Linked_List_Cycle_2 {
 

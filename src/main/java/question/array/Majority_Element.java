@@ -4,13 +4,14 @@ package question.array;
 // 2. 排序后中间就是
 // 3.
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Majority Element",
+        link = "https://leetcode.com/problems/majority-element/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 
                 1. 最简单直观的就是统计各个元素的数量，但这个需要额外空间
                 
@@ -35,7 +36,8 @@ import elder.Leetcode;
                   
                 所以，不必为这感到难过。
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Majority_Element {
     public int majorityElement(int[] nums) {

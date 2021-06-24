@@ -1,8 +1,9 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -11,9 +12,12 @@ import java.util.Set;
 @Leetcode(
         title = "Longest Consecutive Sequence",
         category = Category.ARRAY,
-        tag = "这个题的本质和two sum一样，就是快速判断某一个数是否在数组当中",
-        relatedTopics = {"two sum"},
-        howToSolveIt = """
+        link = "https://leetcode.com/problems/longest-consecutive-sequence/",
+        relatedQuestions = {"two sum"},
+        how2SolveIt = """
+                
+                这个题的本质和two sum一样，就是快速判断某一个数是否在数组当中
+                
                 q 已知是什么，未知是什么
                                 
                 a 已知是一个无序数组，未知是求这个数组中元素所有组成的最长子序列。
@@ -51,7 +55,7 @@ import java.util.Set;
 )
 public class Longest_Consecutive_Sequence {
 
-    @Solution("假设是有序数组")
+    @Solution(name = "假设是有序数组")
     static class Orded {
 
         // 使用两个指针不断的找到一个连续的子序列，只到遍历完为止，
@@ -81,6 +85,7 @@ public class Longest_Consecutive_Sequence {
 
     }
 
+    @Solution(name = "使用HashSet")
     static class UsingHashSet {
 
         public int longestConsecutive(int[] nums) {

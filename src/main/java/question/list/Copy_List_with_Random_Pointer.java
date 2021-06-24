@@ -1,15 +1,16 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Leetcode(
         title = "Copy List with Random Pointer",
+        link = "https://leetcode.com/problems/copy-list-with-random-pointer/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 q: 可不可以，先简化一个问题？比如说，如果没有random，你会做么？
                 
                 a：没问题，很简单
@@ -26,7 +27,8 @@ import java.util.Map;
                 
                 q: 还有一种比较trick的方式，欣赏就好，你不容易想得到
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Copy_List_with_Random_Pointer {
 

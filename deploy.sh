@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-
 rm -rf out/
 
 mvn clean compile

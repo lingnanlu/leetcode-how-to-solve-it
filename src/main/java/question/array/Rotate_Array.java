@@ -4,13 +4,14 @@ package question.array;
 // 如果是可以使用额外的数组, 那么是简单的, 易于理解的
 // 如果要求原地, 就三次reverse, 但不直观, 比较trick
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Rotate Array",
+        link = "https://leetcode.com/problems/rotate-array/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 思路一：
                 
                 解决不了k次，就解决移动一次，然后再调用k次
@@ -22,7 +23,8 @@ import elder.Leetcode;
                 思路三：
                 
                 三次reverse，这个相当于一种非常tricky的方式了，记住就行。
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Rotate_Array {
 

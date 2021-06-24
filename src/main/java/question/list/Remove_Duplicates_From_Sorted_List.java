@@ -1,16 +1,18 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Remove Duplicates From Sorted List",
+        link = "https://leetcode.com/problems/remove-duplicates-from-sorted-list/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 这个题很简单，其实先手动模拟一遍就行。
                 
                 然后，关键是能清楚的说明每个变量的含义
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Remove_Duplicates_From_Sorted_List {
 

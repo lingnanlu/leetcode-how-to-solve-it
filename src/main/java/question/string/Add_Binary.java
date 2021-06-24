@@ -1,16 +1,19 @@
 package question.string;
 
-import elder.Category;
-import elder.Leetcode;
+
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Add Binary",
+        link = "https://leetcode.com/problems/add-binary/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 关于字符串和整数的题，注意一点，就是溢出问题
                 
                 这题不难，模拟操作就行, 如果不转化成整数，就可以避免溢出问题了
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Add_Binary {
 

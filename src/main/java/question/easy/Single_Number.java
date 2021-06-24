@@ -1,6 +1,5 @@
 package question.easy;
 
-import elder.Question;
 
 public class Single_Number {
 

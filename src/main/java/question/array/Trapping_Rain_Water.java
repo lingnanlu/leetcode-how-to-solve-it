@@ -1,13 +1,15 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 @Leetcode(
         title = "Trapping Rain Water",
+        link = "https://leetcode.com/problems/trapping-rain-water/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 q 有没有见过类似的题？
                 
                 a 没有
@@ -62,7 +64,8 @@ import elder.Solution;
                 q 其实我们无论是找valley,还是找peak,难点就是找到两个边界. 而之所以之前的方式不行，是因为你对valley的定义有问题，它真的是
                 两边高，中间低么？ 你再看看它有什么特征，为什么人眼一眼能看出来的，但你却不能表述出来。
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Trapping_Rain_Water {
 
@@ -89,7 +92,7 @@ public class Trapping_Rain_Water {
     // 换个思路找山峰，山峰好找，只要比两头高就行。对于左边界来说，是比右边高，右边界来说，是比左边高
     public
 
-    @Solution("找到所有Valley，然后加起来, 这种方式是错误的，因为使用这种方式找到的valley，并不包括[4, 2, 3]这种")
+    @Solution(name = "找到所有Valley，然后加起来, 这种方式是错误的，因为使用这种方式找到的valley，并不包括[4, 2, 3]这种")
     static class SumValley {
         public int trap(int[] height) {
 

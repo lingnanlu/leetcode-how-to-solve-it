@@ -3,9 +3,10 @@ package question.array;
 // 你不能把所有的都相乘, 然后再做除法, 想想如果有0的情况
 // 这个看答案也是非常trick, 还是记住吧
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,8 +14,9 @@ import java.util.List;
 
 @Leetcode(
         title = "Product of Array Except Self",
+        link = "https://leetcode.com/problems/product-of-array-except-self/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 
                 方法一、
                 
@@ -47,11 +49,12 @@ import java.util.List;
                 
                 如果是除法的话，一定要注意0的情况，仔细考虑各种特殊情况，这个要求细心，就不展开了。
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Product_Of_Array_Except_Self {
 
-    @Solution("根据字面意思，使用额外空间消除重复")
+    @Solution(name = "根据字面意思，使用额外空间消除重复")
     static class ProductOfOther {
 
         public int[] productExceptSelf(int[] nums) {
@@ -79,7 +82,7 @@ public class Product_Of_Array_Except_Self {
     }
 
 
-    @Solution("使用常量空间")
+    @Solution(name = "使用常量空间")
     static class ProductOfOtherUsingConstantSpace {
 
         public int[] productExceptSelf(int[] nums) {
@@ -102,7 +105,7 @@ public class Product_Of_Array_Except_Self {
         }
     }
 
-    @Solution("使用除法")
+    @Solution(name = "使用除法")
     static class UsingDivision {
         // 如果能用除法呢? 你怎么处理0
         // 其实只有一个0, 和大于1个0这两种情况需要处理

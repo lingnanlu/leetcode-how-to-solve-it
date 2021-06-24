@@ -1,16 +1,19 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
+
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Rotate Image",
+        link = "https://leetcode.com/problems/rotate-image/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 思路一：使用另一个维数组进行辅助操作
                 
                 思路二：其实和Rotate Array一样，都是将Rotate操作，转化为容易实现的操作，只是这种转化的逻辑比较triky.
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Rotate_Image {
 

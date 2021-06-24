@@ -1,8 +1,8 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -10,8 +10,9 @@ import java.util.Set;
 
 @Leetcode(
         title = "Set Matrix Zeroes",
+        link = "https://leetcode.com/problems/set-matrix-zeroes/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 O(m+n)的空间复杂度的好想，那么能不能不使用额外空间呢？
                 
                 这里要看O(m+n)的额外空间记录的是什么信息，这里记录的是哪些行为0，哪些列为0，
@@ -21,11 +22,12 @@ import java.util.Set;
                 那么，Matrix的什么地方可以用来记录这些值？最容易想到的是第一行和第一列
                 
                 这里可以先简化一下，如果只要求把行设置为0，你会怎么做？
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Set_Matrix_Zeroes {
 
-    @Solution("使用O(m + n)的空间")
+    @Solution(name = "使用O(m + n)的空间")
     static class UsingExtraSpace {
         public void setZeroes(int[][] matrix) {
             // 首先不能遇到0就将行列都置为0, 因为后来出现的0你不知道是原来的还是你置的.
@@ -63,7 +65,7 @@ public class Set_Matrix_Zeroes {
         }
     }
 
-    @Solution("使用O(1)的空间")
+    @Solution(name = "使用O(1)的空间")
     static class UsingConstSpace {
         public void setZeroes(int[][] matrix) {
 
@@ -214,7 +216,6 @@ public class Set_Matrix_Zeroes {
                 matrix[i][0] = 0;
             }
         }
-
 
     }
 }

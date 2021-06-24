@@ -1,20 +1,23 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
+
+import run.elder.Category;
+import run.elder.Leetcode;
 
 import java.util.Stack;
 
 @Leetcode(
         title = "Palindrome Linked List",
+        link = "https://leetcode.com/problems/palindrome-linked-list/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 其实这个题也不需要什么技巧，分以下几步走
                 
                 1. 找到后半部分
                 2. 将后半部分的开头和前半部分的尾部开始对比，这里需要一个reverse，或者stack.
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Palindrome_Linked_List {
 

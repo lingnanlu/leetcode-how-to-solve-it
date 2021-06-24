@@ -1,14 +1,16 @@
 package question.string;
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Integer to Roman",
-        category = Category.STRING,
-        howToSolveIt = """
+        link = "https://leetcode.com/problems/integer-to-roman/",
+        category = Category.UNKNOWN,
+        how2SolveIt = """
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Integer_To_Roman {
 }

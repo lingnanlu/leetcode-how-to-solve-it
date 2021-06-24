@@ -1,13 +1,14 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 @Leetcode(
         title = "Reverse Linked List II",
+        link = "https://leetcode.com/problems/reverse-linked-list-ii/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 q 这里只是reverse部分，其实可以利用之前的方法. 其实这是把原链表分成了三份。
                 
                 我们需要将中间那一份reverse，这个可以迭代，也可以递归。
@@ -16,12 +17,12 @@ import elder.Solution;
                 
                 为了将三者连起来，所以要记住第一个链表的尾，第三个链表的头。
                 
-                
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Reverse_Linked_List_2 {
 
-    @Solution("两遍遍历，第一遍找边界，第二遍reverse，然后链接, 这种方法其它也不算严格意义上的两遍，但比onepass清晰")
+    @Solution(detail = "两遍遍历，第一遍找边界，第二遍reverse，然后链接, 这种方法其它也不算严格意义上的两遍，但比onepass清晰")
     static class TwoPass {
         public static question.list.ListNode reverseBetween(question.list.ListNode head, int m, int n) {
 
@@ -83,7 +84,7 @@ public class Reverse_Linked_List_2 {
         }
     }
 
-    @Solution("one pass todo")
+    @Solution(name = "one pass todo")
     static class OnePass {
 
         public static question.list.ListNode reverseBetween(ListNode head, int m, int n) {

@@ -1,12 +1,13 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Swap Nodes in Pairs",
+        link = "https://leetcode.com/problems/swap-nodes-in-pairs/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 又这是一个模拟操作的题，在纸上理清各个指针的操作即可，要细心一些。
                 
                 这题还有另外一种思路，就是交换相邻节点的值，这是又一种比较trick的方式。
@@ -15,7 +16,7 @@ import elder.Leetcode;
                 
                 见Reverse Nodes in k-Group
                 """,
-        relatedTopics = "Reverse Nodes in k-Group"
+        relatedQuestions = {"Reverse Nodes in k-Group"}
 )
 public class Swap_Nodes_In_Pairs {
 

@@ -1,14 +1,16 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
+
+import run.elder.Category;
+import run.elder.Leetcode;
 
 import java.util.TreeSet;
 
 @Leetcode(
         title = "Contains Duplicate III",
-        category = Category.TODO,
-        howToSolveIt = """
+        link = "https://leetcode.com/problems/contains-duplicate-iii/",
+        category = Category.UNKNOWN,
+        how2SolveIt = """
                 
                 q. 你之前有没有遇到过类似的问题？
                 
@@ -66,7 +68,8 @@ import java.util.TreeSet;
          
                
                 这里的关键是窗口的建立
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Contains_Duplicate_3 {
 

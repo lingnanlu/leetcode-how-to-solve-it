@@ -1,7 +1,8 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
+
+import run.elder.Category;
+import run.elder.Leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,8 +11,9 @@ import java.util.stream.Collectors;
 
 @Leetcode(
         title = "Permutations II",
+        link = "https://leetcode.com/problems/permutations-ii/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 q 这个和Permutations有什么不同？
                                 
                 a 这个包含重复元素。
@@ -24,7 +26,8 @@ import java.util.stream.Collectors;
                                 
                 q 试一试
                               
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Permutations_II {
 

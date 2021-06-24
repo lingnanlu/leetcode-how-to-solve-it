@@ -8,32 +8,29 @@
     <artifactId>leetcode-how-to-solve-it</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.release>15</maven.compiler.release>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>run.elder</groupId>
+            <artifactId>leetcode-annotation-processor</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
+                <!--only do annotation processing-->
                 <configuration>
-                    <source>14</source>
-                    <target>14</target>
-                    <compilerArgs>--enable-preview</compilerArgs>
+                    <proc>only</proc>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>14</source>
-                    <target>14</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>14</source>
-                    <target>14</target>
-                </configuration>
+
             </plugin>
         </plugins>
     </build>

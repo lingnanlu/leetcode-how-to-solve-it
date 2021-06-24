@@ -1,19 +1,21 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Odd Even Linked List",
+        link = "https://leetcode.com/problems/odd-even-linked-list/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 很自然的想法
                 
                 创建两个链表，一个是odd链表，一个是even链表
                 
                 遍历一遍，然后将odd添加到odd链表，even添加到even链表。然后再合并两个链表。
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Odd_Even_Linked_List {
     public ListNode oddEvenList(ListNode head) {

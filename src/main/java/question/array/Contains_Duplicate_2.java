@@ -1,15 +1,16 @@
 package question.array;
 
-import elder.Category;
-import elder.Leetcode;
+import run.elder.Category;
+import run.elder.Leetcode;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Leetcode(
         title = "Contains Duplicate II",
+        link = "https://leetcode.com/problems/contains-duplicate-ii/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 
                 1. 利用Contains Duplicate的方法，只是之前使用Set,而这里要保存index,所以使用Map
                 2. 也可以先排序，但因为排了序后，丢失了位置信息，所以要先改变一个结构，再排序。但这个排序需要保持相同元素在原序列中的相对顺序。
@@ -17,7 +18,7 @@ import java.util.Map;
                 
                 以上都是利用了Contains Duplicate的思想
                 """,
-        relatedTopics = {"Contain Duplicate"}
+        relatedQuestions = {"Contain Duplicate"}
 )
 public class Contains_Duplicate_2 {
 

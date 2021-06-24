@@ -1,11 +1,15 @@
 package question.array;
 
-import elder.*;
+
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 @Leetcode(
         title = "Remove Duplicates from Sorted Array",
+        link = "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
         category = Category.ARRAY,
-        howToSolveIt = """
+        how2SolveIt = """
                 q.问题是什么？
 
                 a.消除数组中的重复元素
@@ -43,12 +47,13 @@ import elder.*;
 
                 a.有点激动，似乎可行。。。发现只是简单的去掉newNums就行了，eraka!
 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Remove_Duplicates_from_Sorted_Array {
 
-    @Try("简单的复制数组")
-    class ArrayCopy {
+    @Solution(name = "简单的复制数组")
+    static class ArrayCopy {
         public int[] duplicates(int[] nums) {
             int[] newNums = new int[nums.length];
 
@@ -64,7 +69,7 @@ public class Remove_Duplicates_from_Sorted_Array {
     }
 
 
-    @Try("简单的复制数组, 更好的命名")
+    @Solution(name = "简单的复制数组, 更好的命名")
     class ArrayCopyWithBetterName {
         public int[] duplicatesBetterName(int[] nums) {
 
@@ -118,7 +123,7 @@ public class Remove_Duplicates_from_Sorted_Array {
     }
 
 
-    @Solution("使用新数组去掉重复元素")
+    @Solution(name = "使用新数组去掉重复元素")
     class RemoveDuplicatesUsingNewArray {
         public int removeDuplicates(int[] nums) {
 
@@ -149,7 +154,7 @@ public class Remove_Duplicates_from_Sorted_Array {
         }
     }
 
-    @Best("原地去除重复元素")
+    @Solution(name = "原地去除重复元素")
     class RemoveDuplicatesInplace {
         public int removeDuplicates(int[] nums) {
 
@@ -178,7 +183,7 @@ public class Remove_Duplicates_from_Sorted_Array {
         }
     }
 
-    @Solution("思路不清晰的答案")
+    @Solution(name = "思路不清晰的答案")
     class Old {
         public int removeDuplicates(int[] nums) {
 
