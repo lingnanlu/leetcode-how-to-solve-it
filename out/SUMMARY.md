@@ -2,7 +2,6 @@
 
 * [怎样解题 leetcode](README.md)
 * [Array](array/README.md)
-  * [3Sum](array/3sum-1.md)
   * [Permutations](array/permutations.md)
   * [Next Permutation](array/next-permutation.md)
   * [Set Matrix Zeroes](array/set-matrix-zeroes.md)
