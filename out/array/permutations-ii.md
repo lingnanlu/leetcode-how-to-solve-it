@@ -1,24 +1,25 @@
-#Permutations II
+# Permutations II
 
-https://leetcode.com/problems/permutations-ii
+[https://leetcode.com/problems/permutations-ii](https://leetcode.com/problems/permutations-ii)
 
-### 问题描述
+## 问题描述
 
-<p>Given a collection of numbers that might contain duplicates, return all possible unique permutations.</p>
+Given a collection of numbers that might contain duplicates, return all possible unique permutations.
 
-<p><strong>Example:</strong></p>
+**Example:**
 
-<pre>
-<strong>Input:</strong> [1,1,2]
-<strong>Output:</strong>
+```text
+
+Input: [1,1,2]
+Output:
 [
   [1,1,2],
   [1,2,1],
   [2,1,1]
 ]
-</pre>
+```
 
-### 解题思路
+## 解题思路
 
 q 这个和Permutations有什么不同？
 
@@ -32,11 +33,9 @@ a 如果使用NextPermutations，应该不做修改就行
 
 q 试一试
 
+## 相关题目
 
-### 相关题目
-
-
-### 代码
+## 代码
 
 ```java
 public class Permutations_II {
@@ -160,3 +159,4 @@ public class Permutations_II {
 
 }
 ```
+

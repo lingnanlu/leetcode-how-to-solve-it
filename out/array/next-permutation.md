@@ -1,27 +1,26 @@
-#Next Permutation
+# Next Permutation
 
-https://leetcode.com/problems/next-permutation
+[https://leetcode.com/problems/next-permutation](https://leetcode.com/problems/next-permutation)
 
-### 问题描述
+## 问题描述
 
-<p>Implement <strong>next permutation</strong>, which rearranges numbers into the lexicographically next greater permutation of numbers.</p>
+Implement **next permutation**, which rearranges numbers into the lexicographically next greater permutation of numbers.
 
-<p>If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).</p>
+If such arrangement is not possible, it must rearrange it as the lowest possible order \(ie, sorted in ascending order\).
 
-<p>The replacement must be <strong><a href="http://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></strong> and use only constant&nbsp;extra memory.</p>
+The replacement must be [**in-place**](http://en.wikipedia.org/wiki/In-place_algorithm) and use only constant extra memory.
 
-<p>Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.</p>
+Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.
 
-<p><code>1,2,3</code> &rarr; <code>1,3,2</code><br />
-<code>3,2,1</code> &rarr; <code>1,2,3</code><br />
-<code>1,1,5</code> &rarr; <code>1,5,1</code></p>
+`1,2,3` → `1,3,2`  
+ `3,2,1` → `1,2,3`  
+ `1,1,5` → `1,5,1`
 
-### 解题思路
-
+## 解题思路
 
 q 这个题的要求是什么
 
-a 求已知排列的下一个比它大的排列，要求原地和O(1)的空间复杂度
+a 求已知排列的下一个比它大的排列，要求原地和O\(1\)的空间复杂度
 
 q OK，那么，你遇到过类似问题么,比如说类似的这种已知一个东西，求下一个比它大的。
 
@@ -67,8 +66,7 @@ q. 举个例子，在三位中进行调整的例子，现在，我们的最低�
 
 比如说，2， 3， 1
 
-a 因为最低两位是最大的，所以不可能只变化最低两位，需要从最低两位中拿出一个数来换掉最高位的，而这个数应该是比最高位刚刚大一点就好，
-这里是3， 所以变成3， 2， 1
+a 因为最低两位是最大的，所以不可能只变化最低两位，需要从最低两位中拿出一个数来换掉最高位的，而这个数应该是比最高位刚刚大一点就好， 这里是3， 所以变成3， 2， 1
 
 q 仅仅是换掉么，最高位确定了，剩下的呢?
 
@@ -88,16 +86,9 @@ q 所以，我们这里有一个规则
 
 a 就是一个逆序
 
+## 相关题目
 
-
-
-
-
-
-### 相关题目
-
-
-### 代码
+## 代码
 
 ```java
 public class Next_Permutation {
@@ -149,3 +140,4 @@ public class Next_Permutation {
     }
 }
 ```
+

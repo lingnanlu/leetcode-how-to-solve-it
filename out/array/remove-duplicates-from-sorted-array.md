@@ -1,50 +1,48 @@
-#Remove Duplicates from Sorted Array
+# Remove Duplicates from Sorted Array
 
-https://leetcode.com/problems/remove-duplicates-from-sorted-question.array
+[https://leetcode.com/problems/remove-duplicates-from-sorted-question.array](https://leetcode.com/problems/remove-duplicates-from-sorted-question.array)
 
-### 问题描述
+## 问题描述
 
-<p>Given a sorted question.array <em>nums</em>, remove the duplicates <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a> such that each element appear only <em>once</em> and return the new length.</p>
+Given a sorted question.array _nums_, remove the duplicates [**in-place**](https://en.wikipedia.org/wiki/In-place_algorithm) such that each element appear only _once_ and return the new length.
 
-<p>Do not allocate extra space for another question.array, you must do this by <strong>modifying the input question.array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></strong> with O(1) extra memory.</p>
+Do not allocate extra space for another question.array, you must do this by **modifying the input question.array** [**in-place**](https://en.wikipedia.org/wiki/In-place_algorithm) with O\(1\) extra memory.
 
-<p><strong>Example 1:</strong></p>
+**Example 1:**
 
-<pre>
-Given <em>nums</em> = <strong>[1,1,2]</strong>,
+```text
 
-Your function should return length = <strong><code>2</code></strong>, with the first two elements of <em><code>nums</code></em> being <strong><code>1</code></strong> and <strong><code>2</code></strong> respectively.
+Given nums = [1,1,2],
 
-It doesn&#39;t matter what you leave beyond the returned length.</pre>
+Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.
 
-<p><strong>Example 2:</strong></p>
+It doesn't matter what you leave beyond the returned length.
+```
 
-<pre>
-Given <em>nums</em> = <strong>[0,0,1,1,1,2,2,3,3,4]</strong>,
+**Example 2:**
 
-Your function should return length = <strong><code>5</code></strong>, with the first five elements of <em><code>nums</code></em> being modified to&nbsp;<strong><code>0</code></strong>, <strong><code>1</code></strong>, <strong><code>2</code></strong>, <strong><code>3</code></strong>, and&nbsp;<strong><code>4</code></strong> respectively.
+```text
 
-It doesn&#39;t matter what values are set beyond&nbsp;the returned length.
-</pre>
+Given nums = [0,0,1,1,1,2,2,3,3,4],
 
-<p><strong>Clarification:</strong></p>
+Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.
 
-<p>Confused why the returned value is an integer but your answer is an question.array?</p>
+It doesn't matter what values are set beyond the returned length.
+```
 
-<p>Note that the input question.array is passed in by <strong>reference</strong>, which means modification to the input question.array will be known to the caller as well.</p>
+**Clarification:**
 
-<p>Internally you can think of this:</p>
+Confused why the returned value is an integer but your answer is an question.array?
 
-<pre>
-// <strong>nums</strong> is passed in by reference. (i.e., without making a copy)
-int len = removeDuplicates(nums);
+Note that the input question.array is passed in by **reference**, which means modification to the input question.array will be known to the caller as well.
 
-// any modification to <strong>nums</strong> in your function would be known by the caller.
-// using the length returned by your function, it prints the first <strong>len</strong> elements.
-for (int i = 0; i &lt; len; i++) {
-&nbsp; &nbsp; print(nums[i]);
-}</pre>
-### 解题思路
+Internally you can think of this:
+
+ // **nums** is passed in by reference. \(i.e., without making a copy\) int len = removeDuplicates\(nums\);
+
+// any modification to **nums** in your function would be known by the caller. // using the length returned by your function, it prints the first **len** elements. for \(int i = 0; i &lt; len; i++\) {     print\(nums\[i\]\); }&lt;/pre&gt;
+
+## 解题思路
 
 q.问题是什么？
 
@@ -52,42 +50,35 @@ a.消除数组中的重复元素
 
 q.限制是什么？
 
-a.空间上要O(1),in-place,不能有额外的空间，时间上没要求
+a.空间上要O\(1\),in-place,不能有额外的空间，时间上没要求
 
 q.如果你现在想不出来一个解，你能不能放松限制？比如说，可以使用额外空间，你会怎么做呢？
 
 a.额。。。。
 
-q.好吧，还是想不出来哈？现在我们有了一个新的问题，就是创建一个新的数组，但是不能包括重复元素。现在这个问题你还是解不出来。
-那么再简化一下，只是复制数组，可以包括重复元素。这个能解决么？
+q.好吧，还是想不出来哈？现在我们有了一个新的问题，就是创建一个新的数组，但是不能包括重复元素。现在这个问题你还是解不出来。 那么再简化一下，只是复制数组，可以包括重复元素。这个能解决么？
 
 a.想了想，写出
 
-q.现在，你知道如何复制一个数组了，但是我们要添加一个限制，就是不能有重复元素，也就是在复制的时候，要过滤掉重复元素，你能做到么？
-试一试
+q.现在，你知道如何复制一个数组了，但是我们要添加一个限制，就是不能有重复元素，也就是在复制的时候，要过滤掉重复元素，你能做到么？ 试一试
 
 a.想了想，还是不知道。。。
 
-q.你看，在你之前的代码中，i是什么，j又是什么，你能清晰的说出它们的含义么？我们知道，变量的命名是需要准确的，你在这里
-你在这里使用了，i，j，可以更准确一些么？修改一下变量名称，或者，添加注释。你能清楚的描述每一步的作用是做什么的么？
+q.你看，在你之前的代码中，i是什么，j又是什么，你能清晰的说出它们的含义么？我们知道，变量的命名是需要准确的，你在这里 你在这里使用了，i，j，可以更准确一些么？修改一下变量名称，或者，添加注释。你能清楚的描述每一步的作用是做什么的么？
 
 a.写出了。。。
 
-q.好的，现在，你对之前自己写的代码有了更清晰的理解，而不是依靠惯性（惯性就是不加思考）的蒙出答案，在此基础上，再去过滤掉重复元素可以么？
-也就是在复制的时候，如果是重复的，就不要复制了。
+q.好的，现在，你对之前自己写的代码有了更清晰的理解，而不是依靠惯性（惯性就是不加思考）的蒙出答案，在此基础上，再去过滤掉重复元素可以么？ 也就是在复制的时候，如果是重复的，就不要复制了。
 
 a.写出了答案。
 
-q.很好，现在你已经解决了这个问题，离最终答案不远了，你现在解决了一个类似的问题，你能利用它的结果吗？显然不能，你能利用它的方法么？
-就是使用两个指针来复制，之前你有两个数组，现在，你只有一个数组，在一个数组上运用两个指针可不可以？试一试。拿草稿纸写一写。
+q.很好，现在你已经解决了这个问题，离最终答案不远了，你现在解决了一个类似的问题，你能利用它的结果吗？显然不能，你能利用它的方法么？ 就是使用两个指针来复制，之前你有两个数组，现在，你只有一个数组，在一个数组上运用两个指针可不可以？试一试。拿草稿纸写一写。
 
 a.有点激动，似乎可行。。。发现只是简单的去掉newNums就行了，eraka!
 
+## 相关题目
 
-### 相关题目
-
-
-### 代码
+## 代码
 
 ```java
 public class Remove_Duplicates_from_Sorted_Array {
@@ -256,3 +247,4 @@ public class Remove_Duplicates_from_Sorted_Array {
 
 }
 ```
+

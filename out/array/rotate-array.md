@@ -1,50 +1,46 @@
-#Rotate Array
+# Rotate Array
 
-https://leetcode.com/problems/rotate-question.array
+[https://leetcode.com/problems/rotate-question.array](https://leetcode.com/problems/rotate-question.array)
 
-### 问题描述
+## 问题描述
 
-<p>Given an question.array, rotate the question.array to the right by <em>k</em> steps, where&nbsp;<em>k</em>&nbsp;is non-negative.</p>
+Given an question.array, rotate the question.array to the right by _k_ steps, where _k_ is non-negative.
 
-<p><strong>Follow up:</strong></p>
+**Follow up:**
 
-<ul>
-	<li>Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.</li>
-	<li>Could you do it in-place with O(1) extra space?</li>
-</ul>
+* Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.
+* Could you do it in-place with O\(1\) extra space?
 
-<p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
+**Example 1:**
 
-<pre>
-<strong>Input:</strong> nums = [1,2,3,4,5,6,7], k = 3
-<strong>Output:</strong> [5,6,7,1,2,3,4]
-<strong>Explanation:</strong>
+```text
+
+Input: nums = [1,2,3,4,5,6,7], k = 3
+Output: [5,6,7,1,2,3,4]
+Explanation:
 rotate 1 steps to the right: [7,1,2,3,4,5,6]
 rotate 2 steps to the right: [6,7,1,2,3,4,5]
 rotate 3 steps to the right: [5,6,7,1,2,3,4]
-</pre>
+```
 
-<p><strong>Example 2:</strong></p>
+**Example 2:**
 
-<pre>
-<strong>Input:</strong> nums = [-1,-100,3,99], k = 2
-<strong>Output:</strong> [3,99,-1,-100]
-<strong>Explanation:</strong> 
+```text
+
+Input: nums = [-1,-100,3,99], k = 2
+Output: [3,99,-1,-100]
+Explanation: 
 rotate 1 steps to the right: [99,-1,-100,3]
 rotate 2 steps to the right: [3,99,-1,-100]
-</pre>
+```
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+**Constraints:**
 
-<ul>
-	<li><code>1 &lt;= nums.length &lt;= 2 * 10^4</code></li>
-	<li>It&#39;s guaranteed that <code>nums[i]</code> fits in a 32 bit-signed integer.</li>
-	<li><code>k &gt;= 0</code></li>
-</ul>
+* `1 <= nums.length <= 2 * 10^4`
+* It's guaranteed that `nums[i]` fits in a 32 bit-signed integer.
+* `k >= 0`
 
-### 解题思路
+## 解题思路
 
 思路一：
 
@@ -58,10 +54,9 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 三次reverse，这个相当于一种非常tricky的方式了，记住就行。
 
-### 相关题目
+## 相关题目
 
-
-### 代码
+## 代码
 
 ```java
 public class Rotate_Array {
@@ -89,3 +84,4 @@ public class Rotate_Array {
 
 }
 ```
+

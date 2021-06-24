@@ -1,58 +1,58 @@
-#Set Matrix Zeroes
+# Set Matrix Zeroes
 
-https://leetcode.com/problems/set-matrix-zeroes
+[https://leetcode.com/problems/set-matrix-zeroes](https://leetcode.com/problems/set-matrix-zeroes)
 
-### 问题描述
+## 问题描述
 
-<p>Given a <em>m</em> x <em>n</em> matrix, if an element is 0, set its entire row and column to 0. Do it <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a>.</p>
+Given a _m_ x _n_ matrix, if an element is 0, set its entire row and column to 0. Do it [**in-place**](https://en.wikipedia.org/wiki/In-place_algorithm).
 
-<p><strong>Example 1:</strong></p>
+**Example 1:**
 
-<pre>
-<strong>Input:</strong> 
+```text
+
+Input: 
 [
-&nbsp; [1,1,1],
-&nbsp; [1,0,1],
-&nbsp; [1,1,1]
+  [1,1,1],
+  [1,0,1],
+  [1,1,1]
 ]
-<strong>Output:</strong> 
+Output: 
 [
-&nbsp; [1,0,1],
-&nbsp; [0,0,0],
-&nbsp; [1,0,1]
+  [1,0,1],
+  [0,0,0],
+  [1,0,1]
 ]
-</pre>
+```
 
-<p><strong>Example 2:</strong></p>
+**Example 2:**
 
-<pre>
-<strong>Input:</strong> 
+```text
+
+Input: 
 [
-&nbsp; [0,1,2,0],
-&nbsp; [3,4,5,2],
-&nbsp; [1,3,1,5]
+  [0,1,2,0],
+  [3,4,5,2],
+  [1,3,1,5]
 ]
-<strong>Output:</strong> 
+Output: 
 [
-&nbsp; [0,0,0,0],
-&nbsp; [0,4,5,0],
-&nbsp; [0,3,1,0]
+  [0,0,0,0],
+  [0,4,5,0],
+  [0,3,1,0]
 ]
-</pre>
+```
 
-<p><strong>Follow up:</strong></p>
+**Follow up:**
 
-<ul>
-	<li>A straight forward solution using O(<em>m</em><em>n</em>) space is probably a bad idea.</li>
-	<li>A simple improvement uses O(<em>m</em> + <em>n</em>) space, but still not the best solution.</li>
-	<li>Could you devise a constant space solution?</li>
-</ul>
+* A straight forward solution using O\(_mn_\) space is probably a bad idea.
+* A simple improvement uses O\(_m_ + _n_\) space, but still not the best solution.
+* Could you devise a constant space solution?
 
-### 解题思路
+## 解题思路
 
-O(m+n)的空间复杂度的好想，那么能不能不使用额外空间呢？
+O\(m+n\)的空间复杂度的好想，那么能不能不使用额外空间呢？
 
-这里要看O(m+n)的额外空间记录的是什么信息，这里记录的是哪些行为0，哪些列为0，
+这里要看O\(m+n\)的额外空间记录的是什么信息，这里记录的是哪些行为0，哪些列为0，
 
 而如果不使用额外的空间，那么，只能利用Matrix本身来记录这些值了。
 
@@ -60,10 +60,9 @@ O(m+n)的空间复杂度的好想，那么能不能不使用额外空间呢？
 
 这里可以先简化一下，如果只要求把行设置为0，你会怎么做？
 
-### 相关题目
+## 相关题目
 
-
-### 代码
+## 代码
 
 ```java
 public class Set_Matrix_Zeroes {
@@ -262,3 +261,4 @@ public class Set_Matrix_Zeroes {
     }
 }
 ```
+

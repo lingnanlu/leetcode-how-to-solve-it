@@ -1,18 +1,19 @@
-#4sum
+# 4sum
 
-https://leetcode.com/problems/4sum
+[https://leetcode.com/problems/4sum](https://leetcode.com/problems/4sum)
 
-### 问题描述
+## 问题描述
 
-<p>Given an question.array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, are there elements <em>a</em>, <em>b</em>, <em>c</em>, and <em>d</em> in <code>nums</code> such that <em>a</em> + <em>b</em> + <em>c</em> + <em>d</em> = <code>target</code>? Find all unique quadruplets in the question.array which gives the sum of <code>target</code>.</p>
+Given an question.array `nums` of _n_ integers and an integer `target`, are there elements _a_, _b_, _c_, and _d_ in `nums` such that _a_ + _b_ + _c_ + _d_ = `target`? Find all unique quadruplets in the question.array which gives the sum of `target`.
 
-<p><strong>Note:</strong></p>
+**Note:**
 
-<p>The solution set must not contain duplicate quadruplets.</p>
+The solution set must not contain duplicate quadruplets.
 
-<p><strong>Example:</strong></p>
+**Example:**
 
-<pre>
+```text
+
 Given question.array nums = [1, 0, -1, 0, -2, 2], and target = 0.
 
 A solution set is:
@@ -21,9 +22,9 @@ A solution set is:
   [-2, -1, 1, 2],
   [-2,  0, 0, 2]
 ]
-</pre>
+```
 
-### 解题思路
+## 解题思路
 
 q. 你遇到过这个问题么？
 
@@ -31,7 +32,7 @@ a. 之间的3Sum, 只是这里是a + b + c + d= target ，固定其中一个，�
 
 q. 嗯，这次写的没问题，但这种嵌套for写的很不优雅，而且你发现它们是不是有相同的模式？假如是5Sum呢？
 
-q. 另外，它似乎预示着这样一个规律：4Sum -> 3Sum -> 2Sum. 这种模式能给你什么启发么？
+q. 另外，它似乎预示着这样一个规律：4Sum -&gt; 3Sum -&gt; 2Sum. 这种模式能给你什么启发么？
 
 a. 嗯，这种模式和递归很像，所以，使用递归可以简化代码。我试一试。
 
@@ -39,11 +40,9 @@ q. 好的。你可以试试使用DFS的思想来
 
 a. 写出DFS的解法.
 
+## 相关题目
 
-### 相关题目
-
-
-### 代码
+## 代码
 
 ```java
 public class Four_Sum {
@@ -284,3 +283,4 @@ public class Four_Sum {
     }
 }
 ```
+

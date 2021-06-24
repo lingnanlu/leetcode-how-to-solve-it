@@ -1,33 +1,38 @@
-#Contains Duplicate
+# Contains Duplicate
 
-https://leetcode.com/problems/contains-duplicate
+[https://leetcode.com/problems/contains-duplicate](https://leetcode.com/problems/contains-duplicate)
 
-### 问题描述
+## 问题描述
 
-<p>Given an question.array of integers, find if the question.array contains any duplicates.</p>
+Given an question.array of integers, find if the question.array contains any duplicates.
 
-<p>Your function should return true if any value appears at least twice in the question.array, and it should return false if every element is distinct.</p>
+Your function should return true if any value appears at least twice in the question.array, and it should return false if every element is distinct.
 
-<p><strong>Example 1:</strong></p>
+**Example 1:**
 
-<pre>
-<strong>Input:</strong> [1,2,3,1]
-<strong>Output:</strong> true</pre>
+```text
 
-<p><strong>Example 2:</strong></p>
+Input: [1,2,3,1]
+Output: true
+```
 
-<pre>
-<strong>Input: </strong>[1,2,3,4]
-<strong>Output:</strong> false</pre>
+**Example 2:**
 
-<p><strong>Example 3:</strong></p>
+```text
 
-<pre>
-<strong>Input: </strong>[1,1,1,3,3,4,3,2,4,2]
-<strong>Output:</strong> true</pre>
+Input: [1,2,3,4]
+Output: false
+```
 
-### 解题思路
+**Example 3:**
 
+```text
+
+Input: [1,1,1,3,3,4,3,2,4,2]
+Output: true
+```
+
+## 解题思路
 
 1. 最直观的依然是使用一个Set来保存出现过的元素。
 2. 另一种方式是排序，然后出现连接相同的就行。
@@ -36,12 +41,11 @@ https://leetcode.com/problems/contains-duplicate
 
 如果乱序不好解决，那么，先排个序，改变一个数据结构，再看看有没有更好的方式，
 
-
-### 相关题目
+## 相关题目
 
 1. Majority Element
 
-### 代码
+## 代码
 
 ```java
 public class Contains_Duplicate {
@@ -67,3 +71,4 @@ public class Contains_Duplicate {
 
 }
 ```
+

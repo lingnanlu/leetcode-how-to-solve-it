@@ -1,30 +1,27 @@
-#3Sum Closest
+# 3Sum Closest
 
-https://leetcode.com/problems/3sum-closest
+[https://leetcode.com/problems/3sum-closest](https://leetcode.com/problems/3sum-closest)
 
-### 问题描述
+## 问题描述
 
-<p>Given an question.array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, find three integers in <code>nums</code>&nbsp;such that the sum is closest to&nbsp;<code>target</code>. Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
+Given an question.array `nums` of _n_ integers and an integer `target`, find three integers in `nums` such that the sum is closest to `target`. Return the sum of the three integers. You may assume that each input would have exactly one solution.
 
-<p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
+**Example 1:**
 
-<pre>
-<strong>Input:</strong> nums = [-1,2,1,-4], target = 1
-<strong>Output:</strong> 2
-<strong>Explanation:</strong> The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
-</pre>
+```text
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+Input: nums = [-1,2,1,-4], target = 1
+Output: 2
+Explanation: The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
+```
 
-<ul>
-	<li><code>3 &lt;= nums.length &lt;= 10^3</code></li>
-	<li><code>-10^3&nbsp;&lt;= nums[i]&nbsp;&lt;= 10^3</code></li>
-	<li><code>-10^4&nbsp;&lt;= target&nbsp;&lt;= 10^4</code></li>
-</ul>
+**Constraints:**
 
-### 解题思路
+* `3 <= nums.length <= 10^3`
+* `-10^3 <= nums[i] <= 10^3`
+* `-10^4 <= target <= 10^4`
+
+## 解题思路
 
 q 你之前遇到过类似的问题么
 
@@ -36,16 +33,15 @@ a 之前是相等，这里的最接近
 
 q 能不能用数学语言描述这种最接近
 
-a 就是  |a + b + c - target| 越小越好。
+a 就是 \|a + b + c - target\| 越小越好。
 
 q 你能利用a + b + c = b 的思路么，
 
 a 我想可以，就是左右夹逼，然后判断gap，找到最小的gap就行。
 
-### 相关题目
+## 相关题目
 
-
-### 代码
+## 代码
 
 ```java
 public class Three_Sum_Closet {
@@ -150,3 +146,4 @@ public class Three_Sum_Closet {
     }
 }
 ```
+

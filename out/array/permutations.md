@@ -1,16 +1,17 @@
-#Permutations
+# Permutations
 
-https://leetcode.com/problems/permutations
+[https://leetcode.com/problems/permutations](https://leetcode.com/problems/permutations)
 
-### 问题描述
+## 问题描述
 
-<p>Given a collection of <strong>distinct</strong> integers, return all possible permutations.</p>
+Given a collection of **distinct** integers, return all possible permutations.
 
-<p><strong>Example:</strong></p>
+**Example:**
 
-<pre>
-<strong>Input:</strong> [1,2,3]
-<strong>Output:</strong>
+```text
+
+Input: [1,2,3]
+Output:
 [
   [1,2,3],
   [1,3,2],
@@ -19,9 +20,9 @@ https://leetcode.com/problems/permutations
   [3,1,2],
   [3,2,1]
 ]
-</pre>
+```
 
-### 解题思路
+## 解题思路
 
 q 这个题是找出所有的，你之前有没有遇到过类似的
 
@@ -41,10 +42,9 @@ a DFS, 整个探索过程可以是一颗树。
 
 q 好，使用DFS来写一下吧
 
-### 相关题目
+## 相关题目
 
-
-### 代码
+## 代码
 
 ```java
 public class Permutations {
@@ -231,3 +231,4 @@ public class Permutations {
     }
 }
 ```
+
