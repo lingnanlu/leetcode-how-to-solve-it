@@ -1,13 +1,15 @@
 package question.string;
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 @Leetcode(
         title = "Longest Palindromic Substring",
-        category = Category.TODO,
-        howToSolveIt = """
+        link = "https://leetcode.com/problems/longest-palindromic-substring/",
+        category = Category.STRING,
+        how2SolveIt = """
                 
                 (使用到了动态规划还有一个非常tricky的方法，等学了动规，再返回来做）
                 
@@ -47,12 +49,13 @@ import elder.Solution;
                 
                
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 
 public class Longest_Palindromic_Substring {
 
-    @Solution("从中间到两边, 暴力方法")
+    @Solution(name = "从中间到两边, 暴力方法")
     static class FromMidToSide {
         /**
          * 从头到尾，对于每个元素，把它当成中心（奇），或测试它和它后面的为中心（偶）

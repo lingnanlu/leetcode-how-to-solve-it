@@ -10,6 +10,7 @@
 
     <properties>
         <maven.compiler.release>15</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -28,7 +29,7 @@
                 <version>3.8.1</version>
                 <!--only do annotation processing-->
                 <configuration>
-                    <proc>only</proc>
+                    <proc>none</proc>
                 </configuration>
 
             </plugin>

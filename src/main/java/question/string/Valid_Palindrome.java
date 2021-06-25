@@ -1,14 +1,17 @@
 package question.string;
 
-import elder.Category;
-import elder.Leetcode;
+
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
         title = "Valid Palindrome",
+        link = "https://leetcode.com/problems/valid-palindrome/",
         category = Category.STRING,
-        howToSolveIt = """
+        how2SolveIt = """
                 其实就是两个指针，左右对比，这个比较简单，很容易想到
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Valid_Palindrome {
 

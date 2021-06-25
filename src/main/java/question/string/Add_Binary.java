@@ -7,7 +7,7 @@ import run.elder.Leetcode;
 @Leetcode(
         title = "Add Binary",
         link = "https://leetcode.com/problems/add-binary/",
-        category = Category.LIST,
+        category = Category.STRING,
         how2SolveIt = """
                 关于字符串和整数的题，注意一点，就是溢出问题
                 

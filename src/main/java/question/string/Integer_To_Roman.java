@@ -6,7 +6,7 @@ import run.elder.Leetcode;
 @Leetcode(
         title = "Integer to Roman",
         link = "https://leetcode.com/problems/integer-to-roman/",
-        category = Category.UNKNOWN,
+        category = Category.STRING,
         how2SolveIt = """
                 
                 """,

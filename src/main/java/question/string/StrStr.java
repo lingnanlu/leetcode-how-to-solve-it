@@ -1,15 +1,17 @@
 package question.string;
 
-import elder.Category;
-import elder.Leetcode;
+
+import run.elder.Category;
+import run.elder.Leetcode;
 
 @Leetcode(
-        title = "Implement strStr()",
+        title = "Implement StrStr",
+        link = "https://leetcode.com/problems/implement-strstr/",
         category = Category.STRING,
-        howToSolveIt = """
+        how2SolveIt = """
                 这里面试的话，使用暴力方法就行，也就是最直观的那个。注意思路一定要清晰。
-                
-                """
+                """,
+        relatedQuestions = {}
 )
 public class StrStr {
 

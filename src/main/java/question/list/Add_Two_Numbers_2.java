@@ -1,15 +1,17 @@
 package question.list;
 
-import elder.Category;
-import elder.Leetcode;
-import elder.Solution;
+
+import run.elder.Category;
+import run.elder.Leetcode;
+import run.elder.Solution;
 
 import java.util.Stack;
 
 @Leetcode(
         title = "Add Two Numbers II",
+        link = "https://leetcode.com/problems/add-two-numbers-ii/",
         category = Category.LIST,
-        howToSolveIt = """
+        how2SolveIt = """
                 这个其实和add two numbers 类似 ，只是位序倒了过来。可以先reverse，然后使用add two numbers的方法，最后再将结果reverse
                 
                 但这里加了一个条件，不能reverse list。
@@ -21,11 +23,12 @@ import java.util.Stack;
                 对，使用stack,把顺序调转过来，再进行计算
                 
                 
-                """
+                """,
+        relatedQuestions = {}
 )
 public class Add_Two_Numbers_2 {
 
-    @Solution("使用stack")
+    @Solution(name = "使用stack")
     static class UsingStack {
 
         public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
