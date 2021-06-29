@@ -1,62 +1,78 @@
-#Remove Duplicates from Sorted Array
+# Remove Duplicates from Sorted Array
+**link** : https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+**level** : EASY
+## 一 What the question is ?
+<p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing order</strong>, remove the duplicates <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a> such that each unique element appears only <strong>once</strong>. The <strong>relative order</strong> of the elements should be kept the <strong>same</strong>.</p>
 
-https://leetcode.com/problems/remove-duplicates-from-sorted-question.array
+<p>Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the <strong>first part</strong> of the array <code>nums</code>. More formally, if there are <code>k</code> elements after removing the duplicates, then the first <code>k</code> elements of <code>nums</code>&nbsp;should hold the final result. It does not matter what you leave beyond the first&nbsp;<code>k</code>&nbsp;elements.</p>
 
-### 问题描述
+<p>Return <code>k</code><em> after placing the final result in the first </em><code>k</code><em> slots of </em><code>nums</code>.</p>
 
-<p>Given a sorted question.array <em>nums</em>, remove the duplicates <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a> such that each element appear only <em>once</em> and return the new length.</p>
+<p>Do <strong>not</strong> allocate extra space for another array. You must do this by <strong>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></strong> with O(1) extra memory.</p>
 
-<p>Do not allocate extra space for another question.array, you must do this by <strong>modifying the input question.array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></strong> with O(1) extra memory.</p>
+<p><strong>Custom Judge:</strong></p>
 
+<p>The judge will test your solution with the following code:</p>
+
+<pre>
+int[] nums = [...]; // Input array
+int[] expectedNums = [...]; // The expected answer with correct length
+
+int k = removeDuplicates(nums); // Calls your implementation
+
+assert k == expectedNums.length;
+for (int i = 0; i &lt; k; i++) {
+    assert nums[i] == expectedNums[i];
+}
+</pre>
+
+<p>If all assertions pass, then your solution will be <strong>accepted</strong>.</p>
+
+<p>&nbsp;</p>
 <p><strong>Example 1:</strong></p>
 
 <pre>
-Given <em>nums</em> = <strong>[1,1,2]</strong>,
-
-Your function should return length = <strong><code>2</code></strong>, with the first two elements of <em><code>nums</code></em> being <strong><code>1</code></strong> and <strong><code>2</code></strong> respectively.
-
-It doesn&#39;t matter what you leave beyond the returned length.</pre>
+<strong>Input:</strong> nums = [1,1,2]
+<strong>Output:</strong> 2, nums = [1,2,_]
+<strong>Explanation:</strong> Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+</pre>
 
 <p><strong>Example 2:</strong></p>
 
 <pre>
-Given <em>nums</em> = <strong>[0,0,1,1,1,2,2,3,3,4]</strong>,
-
-Your function should return length = <strong><code>5</code></strong>, with the first five elements of <em><code>nums</code></em> being modified to&nbsp;<strong><code>0</code></strong>, <strong><code>1</code></strong>, <strong><code>2</code></strong>, <strong><code>3</code></strong>, and&nbsp;<strong><code>4</code></strong> respectively.
-
-It doesn&#39;t matter what values are set beyond&nbsp;the returned length.
+<strong>Input:</strong> nums = [0,0,1,1,1,2,2,3,3,4]
+<strong>Output:</strong> 5, nums = [0,1,2,3,4,_,_,_,_,_]
+<strong>Explanation:</strong> Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
 </pre>
 
-<p><strong>Clarification:</strong></p>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-<p>Confused why the returned value is an integer but your answer is an question.array?</p>
+<ul>
+	<li><code>0 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>
+	<li><code>-100 &lt;= nums[i] &lt;= 100</code></li>
+	<li><code>nums</code> is sorted in <strong>non-decreasing</strong> order.</li>
+</ul>
 
-<p>Note that the input question.array is passed in by <strong>reference</strong>, which means modification to the input question.array will be known to the caller as well.</p>
+## 二 How to solve it ?
 
-<p>Internally you can think of this:</p>
+Q. 已知是什么? 未知是什么, 或者说要求的是什么?
 
-<pre>
-// <strong>nums</strong> is passed in by reference. (i.e., without making a copy)
-int len = removeDuplicates(nums);
+A. 已知是一个升序数组, 要求的是将该数组中的重复元素去掉, 剩下的元素没有重复的.
 
-// any modification to <strong>nums</strong> in your function would be known by the caller.
-// using the length returned by your function, it prints the first <strong>len</strong> elements.
-for (int i = 0; i &lt; len; i++) {
-&nbsp; &nbsp; print(nums[i]);
-}</pre>
-### 解题思路
+Q. 限制是什么？
 
-q.问题是什么？
+A.
 
-a.消除数组中的重复元素
+1. 空间上要O(1),in-place,不能使用额外的空间
+2. 时间上没要求
+3. 结果放在数组中的前k个位置
 
-q.限制是什么？
+Q. 如果你现在想不出来一个解，如果想不出来, 你能不能放松一下限制？你觉得哪个限制比较禁锢你的思路?
 
-a.空间上要O(1),in-place,不能有额外的空间，时间上没要求
-
-q.如果你现在想不出来一个解，你能不能放松限制？比如说，可以使用额外空间，你会怎么做呢？
-
-a.额。。。。
+A.额。。。。
 
 q.好吧，还是想不出来哈？现在我们有了一个新的问题，就是创建一个新的数组，但是不能包括重复元素。现在这个问题你还是解不出来。
 那么再简化一下，只是复制数组，可以包括重复元素。这个能解决么？
@@ -84,16 +100,13 @@ q.很好，现在你已经解决了这个问题，离最终答案不远了，你
 a.有点激动，似乎可行。。。发现只是简单的去掉newNums就行了，eraka!
 
 
-### 相关题目
+## 三 Related questions
+## 四 Solutions 
+### 1 简单的复制数组
 
-
-### 代码
+null
 
 ```java
-public class Remove_Duplicates_from_Sorted_Array {
-
-    @Try("简单的复制数组")
-    class ArrayCopy {
         public int[] duplicates(int[] nums) {
             int[] newNums = new int[nums.length];
 
@@ -107,10 +120,12 @@ public class Remove_Duplicates_from_Sorted_Array {
             return newNums;
         }
     }
+```
+### 2 简单的复制数组, 更好的命名
 
+null
 
-    @Try("简单的复制数组, 更好的命名")
-    class ArrayCopyWithBetterName {
+```java
         public int[] duplicatesBetterName(int[] nums) {
 
             int[] newNums = new int[nums.length];
@@ -161,10 +176,12 @@ public class Remove_Duplicates_from_Sorted_Array {
             return newNums;
         }
     }
+```
+### 3 使用新数组去掉重复元素
 
+null
 
-    @Solution("使用新数组去掉重复元素")
-    class RemoveDuplicatesUsingNewArray {
+```java
         public int removeDuplicates(int[] nums) {
 
             int[] newNums = new int[nums.length];
@@ -193,9 +210,12 @@ public class Remove_Duplicates_from_Sorted_Array {
             return j;
         }
     }
+```
+### 4 原地去除重复元素
 
-    @Best("原地去除重复元素")
-    class RemoveDuplicatesInplace {
+null
+
+```java
         public int removeDuplicates(int[] nums) {
 
             int i = 0;  //指向nums中下一个要复制的元素的index.
@@ -222,9 +242,12 @@ public class Remove_Duplicates_from_Sorted_Array {
             return j;
         }
     }
+```
+### 5 思路不清晰的答案
 
-    @Solution("思路不清晰的答案")
-    class Old {
+null
+
+```java
         public int removeDuplicates(int[] nums) {
 
             if (nums.length == 0) {
@@ -253,6 +276,4 @@ public class Remove_Duplicates_from_Sorted_Array {
             return result_len;
         }
     }
-
-}
 ```

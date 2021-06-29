@@ -1,26 +1,33 @@
-package question.array;
+package run.elder.seqence.array;
 
 
 import run.elder.Category;
 import run.elder.Leetcode;
+import run.elder.Level;
 import run.elder.Solution;
 
 @Leetcode(
         title = "Remove Duplicates from Sorted Array",
         link = "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
         category = Category.ARRAY,
+        level = Level.EASY,
         how2SolveIt = """
-                q.问题是什么？
+                
+                Q. 已知是什么? 未知是什么, 或者说要求的是什么?
 
-                a.消除数组中的重复元素
+                A. 已知是一个升序数组, 要求的是将该数组中的重复元素去掉, 剩下的元素没有重复的.
 
-                q.限制是什么？
+                Q. 限制是什么？
 
-                a.空间上要O(1),in-place,不能有额外的空间，时间上没要求
+                A.
+                
+                1. 空间上要O(1),in-place,不能使用额外的空间
+                2. 时间上没要求
+                3. 结果放在数组中的前k个位置
 
-                q.如果你现在想不出来一个解，你能不能放松限制？比如说，可以使用额外空间，你会怎么做呢？
+                Q. 如果你现在想不出来一个解，如果想不出来, 你能不能放松一下限制？你觉得哪个限制比较禁锢你的思路? 
 
-                a.额。。。。
+                A.额。。。。
 
                 q.好吧，还是想不出来哈？现在我们有了一个新的问题，就是创建一个新的数组，但是不能包括重复元素。现在这个问题你还是解不出来。
                 那么再简化一下，只是复制数组，可以包括重复元素。这个能解决么？
@@ -70,7 +77,7 @@ public class Remove_Duplicates_from_Sorted_Array {
 
 
     @Solution(name = "简单的复制数组, 更好的命名")
-    class ArrayCopyWithBetterName {
+    static class ArrayCopyWithBetterName {
         public int[] duplicatesBetterName(int[] nums) {
 
             int[] newNums = new int[nums.length];
@@ -124,7 +131,7 @@ public class Remove_Duplicates_from_Sorted_Array {
 
 
     @Solution(name = "使用新数组去掉重复元素")
-    class RemoveDuplicatesUsingNewArray {
+    static class RemoveDuplicatesUsingNewArray {
         public int removeDuplicates(int[] nums) {
 
             int[] newNums = new int[nums.length];
@@ -155,7 +162,7 @@ public class Remove_Duplicates_from_Sorted_Array {
     }
 
     @Solution(name = "原地去除重复元素")
-    class RemoveDuplicatesInplace {
+    static class RemoveDuplicatesInplace {
         public int removeDuplicates(int[] nums) {
 
             int i = 0;  //指向nums中下一个要复制的元素的index.
@@ -184,7 +191,7 @@ public class Remove_Duplicates_from_Sorted_Array {
     }
 
     @Solution(name = "思路不清晰的答案")
-    class Old {
+    static class Old {
         public int removeDuplicates(int[] nums) {
 
             if (nums.length == 0) {
