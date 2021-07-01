@@ -107,6 +107,7 @@ A. 啊哈! 可以的, 而且我画图画了一个, 没毛病! 就是可以起个
 
 
 ## 三 Related questions
+0. [Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)
 ## 四 Solutions 
 ### 1 一个类似的问题, 创建一个不包含重复元素的新的数组.
 
@@ -268,9 +269,9 @@ A. 啊哈! 可以的, 而且我画图画了一个, 没毛病! 就是可以起个
 
             //从第2个元素开始迭代nums
             int i = 1;
-            while(i < nums.length) {
+            while (i < nums.length) {
                 //找到与cur所指向的元素不同的元素
-                while (i < nums.length && nums[i] == nums[cur] ) i++;
+                while (i < nums.length && nums[i] == nums[cur]) i++;
 
                 //此时, i所指向的元素与cur的不同
                 if (i < nums.length) {

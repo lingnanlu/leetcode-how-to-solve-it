@@ -180,7 +180,7 @@ public class Remove_Duplicates_from_Sorted_Array {
                     将原数组看成两个, 为了不混乱, 起一个别名, 然后使用之前的方法.
                     """
     )
-    static class Fourth {
+    static class Third {
 
         public int removeDuplicates(int[] nums) {
 
