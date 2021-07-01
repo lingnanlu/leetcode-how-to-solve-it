@@ -1,4 +1,4 @@
-package question.array;
+package run.elder.seqence.array;
 
 
 import run.elder.Category;
@@ -10,7 +10,8 @@ import run.elder.Solution;
         link = "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/",
         category = Category.ARRAY,
         how2SolveIt = """
-                q. 你之前做过一个类似的问题**Remove Duplicates from Sorted Array**，这个题不过是改变了一下限制条件，重复元素最多可以有两个
+                Q. 
+                Q. 你之前做过一个类似的问题**Remove Duplicates from Sorted Array**，这个题不过是改变了一下限制条件，重复元素最多可以有两个
                 你能利用之前的思路么？
 
                 a. 应该不难，只要在复制动作发生的时候做一些处理就行，试一试
