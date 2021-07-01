@@ -107,7 +107,8 @@ A. 啊哈! 可以的, 而且我画图画了一个, 没毛病! 就是可以起个
 
 
 ## 三 Related questions
-0. [Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)
+0. [Remove Duplicates from Sorted Array II](https://app.gitbook.com/@asanelder/s/how-to-solve-it/array/remove-duplicates-from-sorted-array-ii)
+
 ## 四 Solutions 
 ### 1 一个类似的问题, 创建一个不包含重复元素的新的数组.
 
