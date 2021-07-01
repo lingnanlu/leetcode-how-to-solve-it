@@ -117,46 +117,45 @@ A. 啊哈! 可以的, 而且我画图画了一个, 没毛病! 就是可以起个
 
 
 ```java
-        public int[] removeDuplicates(int[] nums) {
+public int[] removeDuplicates(int[] nums) {
 
-            // 新数组, 和原来一样大
-            int[] newNums = new int[nums.length];
+    // 新数组, 和原来一样大
+    int[] newNums = new int[nums.length];
 
 
-            /**
-             * 注意这里使用循环不变式, 以下两个断言一直为真
-             * i 指向原数组中下一个要copy的元素
-             * j 指向新数组中下一个空位
-             */
-            int i = 0;
-            int j = 0;
-            while(i != nums.length) {
-                if (!contains(newNums, j, nums[i])) {
-                    newNums[j] = nums[i];
-                    i++;
-                    j++;
-                } else {
-                    i++;
-                }
-            }
-
-            // 因为是循环不变式, 到这里时
-            // i == nums.length 而i的含义是指向下一个要copy的元素, 可以确定, nums中的元素都copy完了
-            // j 指向新数组中的下一个空位, 所以, j之前的都是有元素的, 而且j正好表示新数组的size.
-            // 这就是循环不变式的好处.
-            return newNums;
-        }
-
-        // 判断nums中是否包含n
-        private boolean contains(int[] nums, int size, int n) {
-            for (int i = 0; i < size; i++) {
-                if (nums[i] == n) {
-                    return true;
-                }
-            }
-            return false;
+    /**
+     * 注意这里使用循环不变式, 以下两个断言一直为真
+     * i 指向原数组中下一个要copy的元素
+     * j 指向新数组中下一个空位
+     */
+    int i = 0;
+    int j = 0;
+    while(i != nums.length) {
+        if (!contains(newNums, j, nums[i])) {
+            newNums[j] = nums[i];
+            i++;
+            j++;
+        } else {
+            i++;
         }
     }
+
+    // 因为是循环不变式, 到这里时
+    // i == nums.length 而i的含义是指向下一个要copy的元素, 可以确定, nums中的元素都copy完了
+    // j 指向新数组中的下一个空位, 所以, j之前的都是有元素的, 而且j正好表示新数组的size.
+    // 这就是循环不变式的好处.
+    return newNums;
+}
+
+// 判断nums中是否包含n
+private boolean contains(int[] nums, int size, int n) {
+    for (int i = 0; i < size; i++) {
+        if (nums[i] == n) {
+            return true;
+        }
+    }
+    return false;
+}
 ```
 ### 2 一个类似的问题, 创建一个不包含重复元素的新的数组. 优化时间复杂度
 
@@ -165,48 +164,47 @@ A. 啊哈! 可以的, 而且我画图画了一个, 没毛病! 就是可以起个
 
 
 ```java
-        public int[] removeDuplicates(int[] nums) {
+public int[] removeDuplicates(int[] nums) {
 
-            // 新数组, 和原来一样大
-            int[] newNums = new int[nums.length];
+    // 新数组, 和原来一样大
+    int[] newNums = new int[nums.length];
 
-            /**
-             * 注意这里使用循环不变式, 以下两个断言一直为真
-             * i 指向原数组中下一个要copy的元素
-             * j 指向新数组中下一个空位
-             */
-            int i = 0;
-            int j = 0;
-            while(i != nums.length) {
-                if (!contains(newNums, j, nums[i])) {
-                    newNums[j] = nums[i];
-                    i++;
-                    j++;
-                } else {
-                    i++;
-                }
-            }
-
-            // 因为是循环不变式, 到这里时
-            // i == nums.length 而i的含义是指向下一个要copy的元素, 可以确定, nums中的元素都copy完了
-            // j 指向新数组中的下一个空位, 所以, j之前的都是有元素的, 而且j正好表示新数组的size.
-            // 这就是循环不变式的好处.
-            return newNums;
-        }
-
-        /**
-         * 判断nums中是否包含n
-         * @param nums
-         * @param size 数组大小
-         * @param n
-         * @return
-         */
-        private boolean contains(int[] nums, int size, int n) {
-            if (size == 0) return false;
-            if (nums[size - 1] == n) return true;
-            else return false;
+    /**
+     * 注意这里使用循环不变式, 以下两个断言一直为真
+     * i 指向原数组中下一个要copy的元素
+     * j 指向新数组中下一个空位
+     */
+    int i = 0;
+    int j = 0;
+    while(i != nums.length) {
+        if (!contains(newNums, j, nums[i])) {
+            newNums[j] = nums[i];
+            i++;
+            j++;
+        } else {
+            i++;
         }
     }
+
+    // 因为是循环不变式, 到这里时
+    // i == nums.length 而i的含义是指向下一个要copy的元素, 可以确定, nums中的元素都copy完了
+    // j 指向新数组中的下一个空位, 所以, j之前的都是有元素的, 而且j正好表示新数组的size.
+    // 这就是循环不变式的好处.
+    return newNums;
+}
+
+/**
+ * 判断nums中是否包含n
+ * @param nums
+ * @param size 数组大小
+ * @param n
+ * @return
+ */
+private boolean contains(int[] nums, int size, int n) {
+    if (size == 0) return false;
+    if (nums[size - 1] == n) return true;
+    else return false;
+}
 ```
 ### 3 将原数组看成两个
 
@@ -215,76 +213,74 @@ A. 啊哈! 可以的, 而且我画图画了一个, 没毛病! 就是可以起个
 
 
 ```java
-        public int removeDuplicates(int[] nums) {
+public int removeDuplicates(int[] nums) {
 
-            // 起个别名
-            int[] newNums = nums;
+    // 起个别名
+    int[] newNums = nums;
 
-            // 注意这里也是使用的循环不变式
-            int i = 0;  // 指向原数组中下一个要copy的元素
-            int j = 0;  // 指向新数组中下一个空位
-            while (i != nums.length) {
-                if (!contains(newNums, j, nums[i])) {
-                    newNums[j] = nums[i];
-                    i++;
-                    j++;
-                } else {
-                    i++;
-                }
-            }
-
-            // 因为是循环不变式, 到这里时
-            // i == nums.length 而i的含义是指向下一个要copy的元素, 可以确定, nums中的元素都copy完了
-            // j 指向新数组中的下一个空位, 所以, j之前的都是有元素的, 而且j正好表示新数组的size.
-            // 这就是循环不变式的好处.
-            return j;
-        }
-
-        /**
-         * 判断nums中是否包含n
-         * @param nums
-         * @param size 数组大小
-         * @param n
-         * @return
-         */
-        private boolean contains(int[] nums, int size, int n) {
-            if (size == 0) return false;
-            if (nums[size - 1] == n) return true;
-            else return false;
+    // 注意这里也是使用的循环不变式
+    int i = 0;  // 指向原数组中下一个要copy的元素
+    int j = 0;  // 指向新数组中下一个空位
+    while (i != nums.length) {
+        if (!contains(newNums, j, nums[i])) {
+            newNums[j] = nums[i];
+            i++;
+            j++;
+        } else {
+            i++;
         }
     }
+
+    // 因为是循环不变式, 到这里时
+    // i == nums.length 而i的含义是指向下一个要copy的元素, 可以确定, nums中的元素都copy完了
+    // j 指向新数组中的下一个空位, 所以, j之前的都是有元素的, 而且j正好表示新数组的size.
+    // 这就是循环不变式的好处.
+    return j;
+}
+
+/**
+ * 判断nums中是否包含n
+ * @param nums
+ * @param size 数组大小
+ * @param n
+ * @return
+ */
+private boolean contains(int[] nums, int size, int n) {
+    if (size == 0) return false;
+    if (nums[size - 1] == n) return true;
+    else return false;
+}
 ```
 ### 4 思路不清晰的答案
 
 
 
 ```java
-        public int removeDuplicates(int[] nums) {
+public int removeDuplicates(int[] nums) {
 
-            if (nums.length == 0) {
-                return 0;
-            }
+    if (nums.length == 0) {
+        return 0;
+    }
 
-            int cur = 0;            //指向结果
-            int result_len = 1;     //结果已经有一个元素了
+    int cur = 0;            //指向结果
+    int result_len = 1;     //结果已经有一个元素了
 
-            //从第2个元素开始迭代nums
-            int i = 1;
-            while (i < nums.length) {
-                //找到与cur所指向的元素不同的元素
-                while (i < nums.length && nums[i] == nums[cur]) i++;
+    //从第2个元素开始迭代nums
+    int i = 1;
+    while (i < nums.length) {
+        //找到与cur所指向的元素不同的元素
+        while (i < nums.length && nums[i] == nums[cur]) i++;
 
-                //此时, i所指向的元素与cur的不同
-                if (i < nums.length) {
-                    nums[++cur] = nums[i];
-                    result_len++;
-                    i++;
-                } else {
-                    break;
-                }
-            }
-
-            return result_len;
+        //此时, i所指向的元素与cur的不同
+        if (i < nums.length) {
+            nums[++cur] = nums[i];
+            result_len++;
+            i++;
+        } else {
+            break;
         }
     }
+
+    return result_len;
+}
 ```
