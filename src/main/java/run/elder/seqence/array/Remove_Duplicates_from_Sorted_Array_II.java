@@ -22,8 +22,11 @@ import run.elder.Solution;
                 Q. 回顾你的解法，你能不能把你的方法用到其它类似的问题上来
 
                 A. 这两个题其实可以使用同一个框架来解决，不同的是，要满足复制的条件不同，所以，可以抽象出一个canCopy条件，检查当前状态是否可以进行手复制。
+                
                 """,
-        relatedQuestions = {}
+        relatedQuestions = {
+                "Remove Duplicates from Sorted Array"
+        }
 )
 public class Remove_Duplicates_from_Sorted_Array_II {
 

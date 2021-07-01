@@ -1,4 +1,4 @@
-package question.array;
+package run.elder.seqence.array;
 
 
 import run.elder.Category;
@@ -14,7 +14,42 @@ import java.util.Set;
         category = Category.ARRAY,
         link = "https://leetcode.com/problems/longest-consecutive-sequence/",
         relatedQuestions = {"two sum"},
+        tips = """
+                0(n)复杂度暗示, 要使用一遍遍历的算法, 可能
+                1. 从左到右
+                2. 从右到左
+                3. 同时从左到右和从右到左
+                4. 两遍遍历
+                5. 双指针
+               """,
         how2SolveIt = """
+                
+                Q. 问题是什么?
+                
+                A. 已知一个无序整数数组, 找出其最长连续子序列. 要求O(n)复杂度.
+                
+                Q. 能不能把已知, 未知, 限制分别列出来?
+                
+                A.
+                
+                已知
+                    1. 无序
+                    2. 整数数组
+                    
+                要求
+                    最长连续子序列
+                
+                限制
+                    时间复杂度要求O(n)
+                    无空间复杂度要求
+                    
+                    
+                Q. 
+                
+                
+                
+                
+                
                 
                 这个题的本质和two sum一样，就是快速判断某一个数是否在数组当中
                 
