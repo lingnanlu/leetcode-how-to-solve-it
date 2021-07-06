@@ -1,4 +1,4 @@
-package question.array;
+package run.elder.seqence.array;
 
 import run.elder.Category;
 import run.elder.Leetcode;
@@ -11,26 +11,28 @@ import java.util.*;
         link = "https://leetcode.com/problems/4sum/",
         category = Category.ARRAY,
         how2SolveIt = """
-                q. 你遇到过这个问题么？
+                Q. 你遇到过这个问题么？
 
-                a. 之间的3Sum, 只是这里是a + b + c + d= target ，固定其中一个，就可以是3Sum. 我想可以写出来
-
-                q. 嗯，这次写的没问题，但这种嵌套for写的很不优雅，而且你发现它们是不是有相同的模式？假如是5Sum呢？
-
-                q. 另外，它似乎预示着这样一个规律：4Sum -> 3Sum -> 2Sum. 这种模式能给你什么启发么？
-
-                a. 嗯，这种模式和递归很像，所以，使用递归可以简化代码。我试一试。
+                A. 之间的3Sum, 只是这里是a + b + c + d= target ，固定其中一个，就可以是3Sum. 我想可以模仿3Sum的思路来写
                 
-                q. 好的。你可以试试使用DFS的思想来
+                Q. 嗯，这次写的没问题，但这种嵌套for写的很不优雅，而且你发现它们是不是有相同的模式？假如是5Sum呢？ 
+                另外，它似乎预示着这样一个规律：4Sum -> 3Sum -> 2Sum. 这种模式能给你什么启发么？
+
+                A. 嗯，这种模式和递归很像，所以，使用递归可以简化代码。我试一试。
                 
-                a. 写出DFS的解法. 
+                Q. 好的。你可以试试使用DFS的思想来
+                
+                A. 写出DFS的解法. 
                 
                 """,
         relatedQuestions = {}
 )
 public class Four_Sum {
 
-    @Solution(name = "嵌套写法")
+    @Solution(name = "嵌套写法",
+    detail = """
+             这个相当于利用之前的方法, 并不是利用结果.
+             """)
     static class FourSumNest {
         public List<List<Integer>> fourSum(int[] nums, int target){
 
@@ -51,7 +53,6 @@ public class Four_Sum {
                             j++;
                         }
                     }
-                    // 注意这里跳过重复的写法
                     i++;
                     while(i <= nums.length - 3 && nums[i - 1] == nums[i]) i++;
                 }
@@ -60,12 +61,16 @@ public class Four_Sum {
                 while(h <= nums.length - 4 && nums[h - 1] == nums[h]) h++;
 
             }
-            //没找到。
             return solutions;
         }
     }
 
-    @Solution(name = "递归写法")
+    @Solution(
+            name = "递归写法, 数学归纳法",
+            detail = """
+        你能利用之前的结果吗?
+        其实这里是要证明一下的.
+    """)
     static class FourSumRecursive {
 
         public List<List<Integer>> fourSum(int[] nums, int target) {
