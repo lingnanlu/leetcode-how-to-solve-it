@@ -259,9 +259,4 @@ public class Four_Sum {
         // visit规定了到达结点，离开结点时要做的操作，这个题比较简单，就不单独写出来了
         public void visit(Node node, Path path, Tree tree) { }
     }
-
-    public static void main(String[] args) {
-        int[] nums = {1,0,-1,0,-2,2};
-        System.out.println( new DFS().fourSum(nums, 0));
-    }
 }
