@@ -1,4 +1,4 @@
-package question.array;
+package run.elder.seqence.array;
 
 import run.elder.Category;
 import run.elder.Leetcode;
@@ -12,6 +12,23 @@ import java.util.Arrays;
         link = "https://leetcode.com/problems/3sum-closest/",
         category = Category.ARRAY,
         how2SolveIt = """
+                
+                Q. 你之前遇到过类似问题么?
+                
+                A. 没有
+                
+                Q. 可不可以简化一下问题, 你看这里是3Sum, 可不可以变成2Sum, 2Sum你会解么?
+                
+                A. 2Sum就是找a + b 接近 target, 我感觉最简单暴力的, 就是穷举完所有的, 然后找到最接近的, 这个时间复杂度是O(n^2)
+                
+                Q. 你看, 这里有a + b, 有target. 你真的没见过类似的题?
+                
+                A. 等等, 好像有一个, a + b = target, 不过, 那个是相等, 这个是接近.
+                
+                Q. 你能不能利用之前 a + b = target的方法, 你知道, 你利用那个夹逼的方法, 使的O(n^2), 变成了O(n)
+                
+                A. 我觉得可以试一试.
+                
                 q 你之前遇到过类似的问题么
                 
                 a a + b + c = target
@@ -32,13 +49,56 @@ import java.util.Arrays;
 )
 public class Three_Sum_Closet {
 
-    @Solution
+    @Solution(name = "2Sum 夹逼方法",
+    detail = """
+            其实这个依然需要数学上的逻辑证明, 不能感觉对就对.
+            为什么通过这种夹逼的方式就可以得到解呢?
+            这种左右夹逼得到的和是什么规律呢? 
+            这种左右夹逼得到的和的个数肯定小于穷举的, 为什么这种就是合适的呢? 抛弃了哪些呢? 万一抛弃的那些正好有解怎么办?
+            所以说, 还是要证明一下的.
+            这个夹逼其实不好证明, 先记住吧, 求和可以使用这个方法, 先记住.这里假设该方法是有效的. 
+            """)
+    static class TwoSum {
+        public int twoSumClosest(int[] nums, int target) {
+
+            Arrays.sort(nums);
+
+            int minGap = Integer.MAX_VALUE;
+            int minSum = Integer.MAX_VALUE;
+            int i = 0, j = nums.length - 1;
+            while (i != j) {
+                int sum = nums[i] + nums[j];
+                int gap = Math.abs((nums[i] + nums[j]) - sum);
+                if(gap == 0) {
+                    return sum;
+                } else {
+                    if (gap < minGap) {
+                        minGap = gap;
+                        minSum = sum;
+                    }
+
+                    if (sum < target) {
+                        i++;
+                    } else {
+                        j--;
+                    }
+                }
+            }
+
+            return minSum;
+        }
+    }
+
+
+    @Solution(name = "夹逼方法")
     static class Right {
         public int threeSumClosest(int[] nums, int target) {
+
             Arrays.sort(nums);
 
             int closetGap = Integer.MAX_VALUE;
             int closetSum = 0;
+
 
             for (int i = 0; i <= nums.length - 3; i++) {
 
