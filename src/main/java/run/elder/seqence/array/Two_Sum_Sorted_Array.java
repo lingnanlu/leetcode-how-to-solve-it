@@ -9,7 +9,6 @@ import java.util.Arrays;
 @Leetcode(
         title = "Two Sum II Input array is sorted",
         category = Category.ARRAY,
-        tips = "夹逼",
         link = "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
         how2SolveIt = """
                 这一题和Two Sum很像, 唯一的不同就是是排序了的.

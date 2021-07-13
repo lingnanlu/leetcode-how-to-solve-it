@@ -11,7 +11,6 @@ import run.elder.Solution;
         link = "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
         category = Category.ARRAY,
         level = Level.EASY,
-        tips = "",
         how2SolveIt = """
                 
                 Q. 已知是什么? 未知是什么, 或者说要求的是什么?
