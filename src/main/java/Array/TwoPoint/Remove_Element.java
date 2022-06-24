@@ -1,4 +1,4 @@
-package run.elder.seqence.array;
+package Array.TwoPoint;
 
 import run.elder.Category;
 import run.elder.Leetcode;

@@ -1,4 +1,4 @@
-package run.elder.seqence.array;
+package Array;
 
 
 import run.elder.Category;
