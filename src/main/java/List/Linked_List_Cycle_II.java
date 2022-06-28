@@ -43,6 +43,7 @@ import java.util.Set;
                以上只是说明了有环, 对于环的长度以及入口结点等, 还要有进一步数学证明, 如
                
                https://www.cnblogs.com/hiddenfox/p/3408931.html
+               https://programmercarl.com/0142.%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II.html#%E5%85%B6%E4%BB%96%E8%AF%AD%E8%A8%80%E7%89%88%E6%9C%AC
                 """,
         relatedQuestions = {}
 )
