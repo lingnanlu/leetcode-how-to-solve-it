@@ -16,7 +16,6 @@ import java.util.Set;
                 """,
         relatedQuestions = {}
 )
-
 public class HappyNumber {
 
     public boolean isHappy(int n) {
