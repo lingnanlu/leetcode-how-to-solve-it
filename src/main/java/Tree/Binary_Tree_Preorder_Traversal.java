@@ -31,6 +31,12 @@ import java.util.*;
                 
                 所以, 不管是递归还是迭代, 把它们都看出DFS就是很有帮助的.
                 
+                
+                启示: 
+                
+                对于栈来说, 其实入栈的顺序就是DFS的顺序, 至少什么时候出栈, 就看是不是对它进行visit了, 如果已经visit,并且安排好了它的孩子
+                的入栈顺序符合DFS, 就可以出栈了.
+                
                 """,
         relatedQuestions = {}
 )
@@ -70,6 +76,8 @@ public class Binary_Tree_Preorder_Traversal {
                 status.put(root, Status.BEFORE_LEFT);
 
                 while(!stack.isEmpty()) {
+
+                    // 相当于走到了这里
                     TreeNode node = stack.peek();
                     switch (status.get(node)) {
                         case BEFORE_LEFT -> {
