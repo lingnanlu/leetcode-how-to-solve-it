@@ -13,7 +13,7 @@ import java.util.Queue;
         link = "https://leetcode.com/problems/average-of-levels-in-binary-tree/",
         category = Category.TREE,
         how2SolveIt = """
-                没什么好说的
+                没什么好说的, 层序遍历
                 """,
         relatedQuestions = {}
 )

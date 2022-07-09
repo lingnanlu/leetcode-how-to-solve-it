@@ -19,7 +19,7 @@ import java.util.Queue;
                 
                 方法二:
                 
-                最大深度可以使用递归, 那最小深度呢? 不行, 考虑一种特殊情况, 只有左子树或右子树. 
+                最大深度可以使用递归, 那最小深度呢? 看似一样, 其实不同, 如果只有左或只有右子树, 那么最小深度就是左子树或右子树的深度
                 
                 启示:
                 
@@ -89,11 +89,22 @@ public class Minimum_Depth_of_Binary_Tree {
         public int minDepth(TreeNode root) {
             if (root == null) {
                 return 0;
-            } else {
-                int leftMinDepth = minDepth(root.left);
-                int rightMinDepth = minDepth(root.right);
-                return Math.min(leftMinDepth, rightMinDepth) + 1;
             }
+
+            // 只有右
+            if (root.left == null && root.right != null) {
+                return 1 + minDepth(root.right);
+            }
+
+            // 只有左
+            if (root.left != null && root.right == null) {
+                return 1 + minDepth(root.left);
+            }
+
+            int leftMinDepth = minDepth(root.left);
+            int rightMinDepth = minDepth(root.right);
+            return Math.min(leftMinDepth, rightMinDepth) + 1;
+
         }
 
     }
