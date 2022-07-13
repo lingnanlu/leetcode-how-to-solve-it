@@ -160,7 +160,7 @@ public class Construct_Binary_Tree {
         String[] treeInArr = {"1","2","2","null","3","null","3"};
         TreeNode tree = test.buildTree(treeInArr);
 
-        System.out.println(tree.printInList());
+        tree.printInList();
     }
 
 }
