@@ -1,9 +1,6 @@
 package Tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class Construct_Binary_Tree {
 
@@ -65,7 +62,83 @@ public class Construct_Binary_Tree {
 
     }
 
-    // 从数组构建二叉树
+    public TreeNode buildTree(String treeInStr) {
+        String[] treeInArr = treeInStr.split(",");
+        return buildTree(treeInArr);
+    }
+
+    public TreeNode buildTreeLeetCode(String treeInStr) {
+        String[] treeInArr = treeInStr.split(",");
+        return buildTreeLeetCode(treeInArr);
+    }
+
+
+    // 从数组构建二叉树, 这里的数组不是满二叉树的表示
+    public TreeNode buildTreeLeetCode(String[] treeInArr) {
+
+        if (treeInArr.length == 0) return null;
+
+        TreeNode root = new TreeNode(Integer.parseInt(treeInArr[0]));
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        // queue中保存的是将要填充的层, 不包含null
+        // 注意这里的填充的含义, 是为该这一层的节点生成左右孩子, 且左右孩子都有值了.
+        queue.add(root);
+
+        // i指向treeInArr中, 下一个要使用的值, 如果根节点编号是0的话, 也表示下一个要填充的节点编号.
+        int i = 1;
+        // 如果值还没有使用完, 就一直填充
+        while (i != treeInArr.length) {
+            int count = queue.size();
+
+            while (count != 0) {
+                // 取一个节点, 为其生成左右孩子
+                TreeNode node = queue.poll();
+
+
+                if (i != treeInArr.length) {
+                    // 左孩子
+                    if (!treeInArr[i].equals("null")) {
+                        TreeNode left = new TreeNode(Integer.parseInt(treeInArr[i]));
+                        node.left = left;
+                        queue.add(left);
+                        i++;
+                    } else {
+                        // 此时使用null作为其
+                        node.left = null;
+                        i++;
+                    }
+                } else {
+                    // 没有可用的值剩余了
+                    break;
+                }
+
+
+                if (i != treeInArr.length) {
+                    // 右孩子
+                    if (!treeInArr[i].equals("null")) {
+                        TreeNode right = new TreeNode(Integer.parseInt(treeInArr[i]));
+                        node.right = right;
+                        queue.add(right);
+                        i++;
+                    } else {
+                        // 此时使用null作为其
+                        node.right = null;
+                        i++;
+                    }
+                } else {
+                    // 没有可用的值剩余了.
+                    break;
+                }
+
+                count--;
+            }
+        }
+
+        return root;
+
+    }
+    // 从数组构建二叉树, 这里的数组是完全二叉树的表示
     // treeInArr中的null表示要填充空结点
     public TreeNode buildTree(String[] treeInArr) {
 
@@ -87,6 +160,7 @@ public class Construct_Binary_Tree {
         // 如果值还没有使用完, 就一直填充
         while (i != treeInArr.length) {
             int count = queue.size();
+
             while (count != 0) {
                 // 填充一个结点.
                 TreeNode node = queue.poll();
