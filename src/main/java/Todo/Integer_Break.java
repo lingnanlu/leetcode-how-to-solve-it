@@ -8,66 +8,47 @@ import run.elder.Leetcode;
         link = "https://leetcode.com/problems/integer-break/",
         category = Category.ARRAY,
         how2SolveIt = """
-              
-               方法一:
-               
-                先手动的画一画, 发现这个k >= 2可以有多种拆分方法
                 
-                那么, 我们能不能化简一下, 比如固定 k = 2
+                如果要拆成2个, 则其实是 找 f(x) = x * (n - x)的最大值
+                所以感觉这题其实是一个数学题
                 
-                现在问题变成, 将一个整数拆成2个, 然后求最大
+                这题其实是一个数学题, 就是要证明如下结论
                 
-                我们知道, 所拆的数越接近, 那么越大.
-               
-                我们用f2(n)表示一下拆成2个的最大乘机.
+                ① 当所有拆分出的数字相等时，乘积最大。② 最优拆分数字为 3
                 
-                好了, 现在我们解决了拆成两个的最大乘积问题, 那么拆成3个的最大乘积呢?
+                证明步骤如下
+                https://leetcode.cn/problems/integer-break/solution/343-zheng-shu-chai-fen-tan-xin-by-jyd/
                 
-                拆成3个可以看成是
+                这题先记住结论吧, 自已现在没能力证明
                 
-                先将一个数拆成2个, 然后再将其中一个拆成两个
+                所以本题的策略是
                 
-                f3(n) = max(1 * f2(n - 1), 2 * f2(n - 2), 3 * f2(n - 3), .....)
-                
-                依次递推到
-                
-                f4(n) = max(1 * f3(n - 1), 2 * f3(n - 2), 3 * f3(n - 3)....)
-                
-                
-                fk(n) = ....
-                
-                
-                但这种方法感觉计算量好大, 先放弃
-                
-                方法二:
-                
-                记f(n)为要求的, 这题一看, 不需要得到如何具体划分的, 那我们试试, 可不可以由前面的推导出后面的
-                
-                10 = 1 + 9
-                10 = 2 + 8
-                10 = 3 + 7
-                
-                ...                
-             
-             
-                
-                启示:
-                
-                动规与DFS的区别
-                
-                注: 
-                
-                这一题的递推公式不好找, 先缓一缓
+                1. 尽可能拆3
+                2. 尽可能拆相等.
                 
                 """,
         relatedQuestions = {}
 )
 public class Integer_Break {
     public int integerBreak(int n) {
-        return 0;
+
+        if (n == 2) return 1;
+        if (n == 3) return 2;
+        if (n == 4) return 4;
+
+        // 大于5之后, 尽量拆出3来, 最后剩余一个不大于4的数
+        int result = 1;
+        while(n > 4) {
+            n -= 3;
+            result = 3 * result;
+        }
+
+        result = result * n;
+
+        return result;
+
+
+
     }
 
-    private void integerBreak2(int n) {
-
-    }
 }
