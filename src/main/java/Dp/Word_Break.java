@@ -92,7 +92,6 @@ import java.util.List;
                 
                 两个数字可以么?  其实是可以的, 因为, 0, length, 隐式表示了第一个单词的开头和结尾, 举两个例子.
                 
-               
                 catscaa - cat = scat, [0, 3], 其实表示的是, [0, 0), [3, 7)
                 
                 catscaa - caa = cats, [4, 7], 其实表示的是, [0, 4), [7, 7)
@@ -103,16 +102,75 @@ import java.util.List;
                 
                 且 a <= b
                 
-                     
+                以上思路不正确, 还是不行.
+                   
+                   
+                方法三:
+                
+                以上方法是把问题想复杂了, 问题是, 硬往背包问题上以及什么二维数组之类的去凑, 我们还是回归到最初的问题, 比如说, 记
+                
+                f(s) = T or F, 表示可以由wordDict来组成.
+                
+                那么, 
+                
+                f(s) 看样子像是一个递归(反方向就是迭代), 怎样去缩短到更小呢?
+                
+                其实比较直观的就是, 一个s由 wordDict组成, 那么, 其必然前缀是wordDict中的某一个单词, 并且剩下的也是由wordDict组成, 所以
+                
+                f(s) = wordDict.contain(prefix1) & f(remain1) || wordDict.contain(prefix2) & f(remain2) ....
+                
+                那么, 现在的问题有两个
+                
+                1. 这个前缀指的是什么
+                2. 现在函数的参数是s, 怎么表示成数字呢? 
+                
+                先解决第二个问题, s可以用开始的索引来表示, 比如说
+                
+                f(s) = f(0, s.length()) 
+                
+                而对于以上, s.length()是不变的, 所以f(s) = f(0)
+                
+                这里, 最大的就是f(s.length())了.
+                
+                那么, 前缀是什么呢? 不如举一个例子. 比如  
+                
+                s = leetcode
+                dict = ["leet", "code"]
+                
+                f(4) = f(code) = f(ode) & c在dict中 || f(de) & co在dict中 || f(e) & cod在字典中 || f() & code在dict中.
+                
+                至此找到规律了, 以下就是注意一下细节
+                
+                其实由以上递推公式可以得到一顆树, 对树进行DFS遍历, 每一个结点返回时的值是一个T or F. 对每一个结点求值是利用了其子结点的值.
+                
+                叶子结点就是可以直接求值的.
+                
+                
                 """,
         relatedQuestions = {}
 )
 public class Word_Break {
     public boolean wordBreak(String s, List<String> wordDict) {
-        int[][] dp = new int[s.length()][s.length()];
 
-        // 这里我们要初始化, 比如说, 第一行是什么意思呢?
+        boolean[] exist = new boolean[s.length() + 1];
 
+        // 表示空子符串可以由wordDict组成
+        exist[s.length()] = true;
+
+        // exist[i] = T表示, s.substring(i, end)可以由wordDict组成.
+        // 整个过程就是设置exist数组的值, 最后exist[0]就是要求的值.
+
+        for (int i = exist.length - 1; i >= 0; i--) {
+
+            // 每一轮判断 exist[i]
+            // exist[i] = (exist[i + 1]) & wordDict.contain(i, i + 1) || (exist[i + 2] & wordDict.contain(i, i + 2)
+            // .... (exist[s.length() + 1) & wordDict.conatin(i, s.length())
+            for (int j = i + 1; j <= s.length() ; j++) {
+                exist[i] = exist[i] || (exist[j] && wordDict.contains(s.substring(i, j)));
+            }
+        }
+
+        return exist[0];
 
     }
 }
