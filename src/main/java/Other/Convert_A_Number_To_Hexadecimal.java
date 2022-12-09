@@ -8,8 +8,6 @@ import run.elder.Leetcode;
         link = "https://leetcode.com/problems/convert-a-number-to-hexadecimal/",
         category = Category.UNKNOWN,
         how2SolveIt = """
-                
-                
                 方法一:
                 
                 将一个十进制转化成十六进制表示.
