@@ -1,4 +1,4 @@
-package Other;
+package Array.binary;
 
 import run.elder.Category;
 import run.elder.Leetcode;
@@ -9,7 +9,7 @@ import run.elder.Leetcode;
         category = Category.UNKNOWN,
         how2SolveIt = """
                 
-                方法一: 模拟人工解题步骤
+               方法一: 模拟人工解题步骤
                
                此方法应该是正确的, 但在leetcode上超时了
                
@@ -25,6 +25,14 @@ import run.elder.Leetcode;
                
                这是不是很像二分?
              
+               这里的关键问题就是, 满足哪种条件呢? 这就是比一般二分查找复杂的地方.
+               
+               我觉得可以试一试是否和目标值相等
+               
+               
+               考察:
+               
+               这题的关键还是要明白二分查找跳出循环之后的i, j的含义
                 """,
         relatedQuestions = {}
 )
@@ -55,44 +63,44 @@ public class Arranging_Coins {
     }
 
     static class Second {
+
         public int arrangeCoins(int n) {
-
-            if (n == 1) return 1; // 特殊情况处理一个, 否则不变式不好写
-
+            // 二分查找
             int i = 1, j = n;
 
-            // 这两个初始值没有意义.
-            int mid = 0;            // 上一个尝试的层数
-            long accumulate = 0;    // 上一个尝试的层数的累积值
-
-            while (accumulate <= n) {
-                // 这里面就要不断尝试, 只到找到一个层数使其刚好 > n
-
-                // != 为了方便说明i, j终止时的含义
-                if (i != j) {
-                    mid = i + (j - i) / 2;  // 尝试一个值
-                    accumulate = (long) (1 + mid) * mid / 2;
-                    if (accumulate == n) {
-                        return mid;
-                    } else if (accumulate > n) {
-                        j--;
-                    } else {
-                        i++;
-                    }
+            // 注意不能使用 i!=j, 因为可能存在让两者不相等的情况, 如n=4时.
+            while (i <= j) {
+                int mid = i + (j - i) / 2;
+                long accu = (long) (1 + mid) * mid / 2;
+                if (accu == n) {
+                    return mid;
+                } else if (accu > n) {
+                    j = mid - 1;
                 } else {
-                    //此时 i == j && accumulate <= n
-                    break;
+                    i = mid + 1;
                 }
-
             }
 
-            //此时, i == j
-            // mid是上一个尝试的层数, accumulate为累积值
-            // 此时 accumulate > n或 accumate < n, wjg
-            // 最后一个尝试i
+            /**
+             * 此时, i = j + 1, 关键是你得明白i, j的含义是什么, 要想搞清这个问题, 你得知道i, j最后是怎样变成这样的.
+             *
+             * 其实可以这样想
+             *
+             * [0, i)都是比目标值小的 (注意半开区间)
+             * (j, n]都是比目标值大的 (注意半开区间)
+             *
+             * 而最后 i = j + 1;
+             *
+             * 所以最后就是 i所指比目标值大, 而j所指的比目标值小, j就是满足小于目标值的最大值
+             */
 
-
-
+            return j;
         }
+    }
+
+    public static void main(String[] args) {
+        Second test = new Second();
+
+        test.arrangeCoins(4);
     }
 }
