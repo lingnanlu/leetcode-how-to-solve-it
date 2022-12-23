@@ -26,6 +26,17 @@ import java.util.Comparator;
  * 方法二中的方法还是O(n^2), 那么, 能不能O(n)?
  *
  * 能不能快速知道比某个数小的数有几个? 其实只要是有序的就好了.
+ *
+ * 方法四:
+ *
+ * 再仔细观察题目, 看看还有没有已知条件没有利用上的.
+ *
+ * 如
+ * 0 <= nums[i] <= 100
+ *
+ * 也就是值的个数是有限的, 只有101种可能.
+ *
+ * 这就想到, 能不能使用一个数组来统计每个值出现的次数, 这样, 也就能找到小于它的值的个数了.
  */
 public class How_Many_Numbers_Are_Smaller_Than_The_Current_Number {
 
@@ -118,6 +129,40 @@ public class How_Many_Numbers_Are_Smaller_Than_The_Current_Number {
                 this.val = val;
                 this.index = index;
             }
+        }
+
+    }
+
+    static class Forth {
+
+        public int[] smallerNumbersThanCurrent(int[] nums) {
+
+            // frequency[i]为值为i出现的次数
+            int[] frequency = new int[101];
+            for (int n : nums) {
+                frequency[n]++;
+            }
+
+            // 累积次数, accuFrequency[i] 为小于值i的值的次数总和
+            // 这个其实可以和frequency合并, 为了直观, 这里并没有合并
+            int[] accuFrequency = new int[101];
+            int accu = 0;   // 小于0的次数总各
+            int i = 0;      // 下一个要计算的值
+            while (i != 101) {
+                accuFrequency[i] = accu;
+                i++;
+                accu += frequency[i - 1];
+            }
+
+            int[] result = new int[nums.length];
+
+            for (int j = 0; j < nums.length; j++) {
+                result[j] = accuFrequency[nums[j]];
+            }
+
+            return result;
+
+
         }
 
     }
