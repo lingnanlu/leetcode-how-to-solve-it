@@ -1,8 +1,5 @@
 package Array;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 考察原地重排
  *
@@ -38,29 +35,7 @@ public class Shuffle_The_Array {
     // 原地
     static class Second {
         public int[] shuffle(int[] nums, int n) {
-
-            // 交差的将p, q放入新数组中. p依次为x1, x2, ...xn, q依次为y1, y2, ..., yn
-            int p = nums[0], q = nums[n];
-
-
-            List<Integer> temp = new ArrayList<>(2);
-            // 新数组的下一个空位
-            int i = 0;
-
-            while (i != result.length) {
-                result[i++] = p;
-                result[i++] = q;
-
-                // 更新p, q, temp1, temp2
-
-
-                temp1 = nums[i];
-                temp2 = nums[i + 1];
-
-
-            }
-
-            return result;
+            return null;
         }
     }
 
