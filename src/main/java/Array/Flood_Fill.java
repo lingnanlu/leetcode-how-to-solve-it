@@ -38,9 +38,7 @@ public class Flood_Fill {
         }
 
         // 右上角部分矩阵 [0, sc] -> [sr - 1, n - 1], 遍历方向是
-        for (int i = 0; i < ; i++) {
-
-        }
+      return null;
 
         // 左下角部分矩阵
 
