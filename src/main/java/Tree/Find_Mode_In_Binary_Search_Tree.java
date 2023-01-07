@@ -109,28 +109,14 @@ public class Find_Mode_In_Binary_Search_Tree {
 
     }
 
+    // todo
     static class Third {
 
         public int[] findMode(TreeNode root) {
-
+            return null;
         }
 
-        /**
-         *
-         * @param node
-         * @param preNodeVal 前一个结点的值.
-         * @param i
-         * @param j
-         * @param lastMode
-         */
-        private void walk(TreeNode node,
-                          int preNodeVal,
-                          int i,
-                          int j,
-                          int lastMode
-                          List<Integer> mode) {
-            walk(node.left, )
-        }
+
 
 
     }
