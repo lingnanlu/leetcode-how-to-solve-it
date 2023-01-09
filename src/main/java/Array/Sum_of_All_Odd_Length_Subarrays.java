@@ -104,7 +104,44 @@ package Array;
  * 看了答案的解析, 确实自己找每个数字的出现次数没错, 但确实想不到答案中的方法来找次数.
  * 自己使用归纳法没看出规律来. (即从一个元素的, 二个元素, 三个元素的开始找规律)
  *
- * 最后其实利用的是排列组合的方式.
+ * 那么, 对于最后答案的部分, 难道自己就一点办法也没有么?
+ *
+ * 其实还是可以有点思路的, 就是回归到已知.
+ *
+ * 比如说, 当一遍遍历时, 已知的是什么
+ *
+ * 1. 数组长度
+ * 2. 当前下标
+ * 3. 当前要遍历的值
+ * 4. 左边元素个数
+ * 5. 右边元素个数
+ *
+ * 那么, 能不能利用它们计算出次数来呢?
+ *
+ * 我觉得左边元素个数与右边元素个数是可以利用上的.
+ *
+ * 比如说, 左边有5个, 右边有7个, 那么, 当前元素会出现在多少个子数组中呢?
+ *
+ * 比如说左边是 , [1, 2, 3, 4, 5]
+ * 其实就两种情况
+ * 1. 左边的连续子数组中的元素是偶数个, 右边也是偶数个
+ * 2. 左边是奇数个, 右边也是奇数个
+ *
+ * 对于[1, 2, 3, 4, 5]来说.
+ *
+ * 偶数个的连续子数组和长度有什么关系呢?
+ *
+ * 有0, 2, 4这三种
+ *
+ * 奇数个呢?
+ *
+ * 有1, 3, 5这三种
+ *
+ * 再比如 [1, 2, 3, 4]
+ *
+ * 偶数个有[0, 2, 4]
+ * 奇数个有[1, 3]
+ *
  */
 public class Sum_of_All_Odd_Length_Subarrays {
 
@@ -136,7 +173,33 @@ public class Sum_of_All_Odd_Length_Subarrays {
     static class Right {
 
         public int sumOddLengthSubarrays(int[] arr) {
+            int sum = 0;
 
+            for (int i = 0; i < arr.length; i++) {
+                int leftLength = i;
+                int rightLength = arr.length - (i + 1);
+
+                int n = 0;
+
+                // 这一段有些麻烦, 应该有规律自己还没找到
+                if (leftLength % 2 == 0 && rightLength % 2 == 0) {
+                    n += (leftLength / 2 + 1) * (rightLength / 2 + 1);
+                    n += (leftLength / 2) * (rightLength / 2);
+                } else if (leftLength % 2 == 1 && rightLength % 2 == 0) {
+                    n += ((leftLength + 1) / 2) * (rightLength / 2 + 1);
+                    n += ((leftLength + 1) / 2) * (rightLength / 2);
+                } else if (leftLength % 2 == 0 && rightLength % 2 == 1) {
+                    n += (leftLength / 2 + 1) * ((rightLength + 1) / 2);
+                    n += (leftLength / 2) * ((rightLength + 1) / 2);
+                } else {
+                    n += ((leftLength + 1) / 2) * ((rightLength + 1) / 2);
+                    n += ((leftLength + 1) / 2) * ((rightLength + 1) / 2);
+                }
+
+                sum += arr[i] * n;
+            }
+
+            return sum;
         }
 
     }
