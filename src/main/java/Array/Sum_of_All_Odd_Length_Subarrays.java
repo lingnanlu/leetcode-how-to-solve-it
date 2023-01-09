@@ -25,11 +25,11 @@ package Array;
  *
  * 这个数组长为5, 奇数子数组的长为 1, 3, 5
  *
- * 1 = 3
- * 4 = 4
- * 2 = 5
- * 5 = 4
- * 3 = 3
+ * 1 = 3 = 1 + 1 + 1
+ * 4 = 4 = 1 + 2 + 1
+ * 2 = 5 = 1 + 3 + 2
+ * 5 = 4 = 1 + 2 + 1
+ * 3 = 3 = 1 + 1 + 1
  *
  * 看这数, 似乎是有某种规律的.
  *
@@ -44,10 +44,10 @@ package Array;
  * [1, 4, 2]
  * [4, 2, 5]
  *
- * 1 = 2
- * 4 = 3
- * 2 = 3
- * 5 = 2
+ * 1 = 2 = 1 + 1
+ * 4 = 3 = 1 + 2
+ * 2 = 3 = 1 + 2
+ * 5 = 2 = 1 + 1
  *
  * 发现出现次数是对称的, 这是巧合么? 其实不是, 比如1和5, 一个是第一位, 一个是最后一位, 但其实数子数组元素个数时, 并不在乎顺序
  * 所以肯定是对称的.
@@ -78,31 +78,67 @@ package Array;
  * [12]
  * [10, 11, 12]
  *
- * 10 = 2
- * 11 = 2
- * 12 = 2;
+ * 10 = 2 = 1 + 1
+ * 11 = 2 = 1 + 1
+ * 12 = 2 = 1 + 1
+ *
+ * 再举一个例子
+ *
+ * [1, 2, 3, 4, 5, 6]
+ *
+ * [1], [2], [3], [4], [5], [6]
+ * [1, 2, 3], [2, 3, 4], [3, 4, 5], [4, 5, 6]
+ * [1, 2, 3, 4, 5], [2, 3, 4, 5, 6]
+ *
+ * 1 = 3 = 1 + 1 + 1
+ * 2 = 5 = 1 + 2 + 2
+ * 3 = 6 = 1 + 3 + 2
+ * 4 = 6 = 1 + 3 + 2
+ * 5 = 5 = 1 + 2 + 2
+ * 6 = 3 = 1 + 1 + 1
+ *
+ * 好像这出现次数之间的递增没有规律?
+ *
+ * 目前来说, 做不出来, 只能看答案了.
+ *
+ * 看了答案的解析, 确实自己找每个数字的出现次数没错, 但确实想不到答案中的方法来找次数.
+ * 自己使用归纳法没看出规律来. (即从一个元素的, 二个元素, 三个元素的开始找规律)
+ *
+ * 最后其实利用的是排列组合的方式.
  */
 public class Sum_of_All_Odd_Length_Subarrays {
-    public int sumOddLengthSubarrays(int[] arr) {
 
-        int sum = 0;
-        int i = 0, j = arr.length - 1;
+    static class Wrong {
+        public int sumOddLengthSubarrays(int[] arr) {
 
-        // 计算有多少种长度子数组
-        // begin也是i所指向的数字出现的次数
-        int begin = (int) Math.ceil(arr.length / 2.0);
+            int sum = 0;
+            int i = 0, j = arr.length - 1;
 
-        while (i < j) {
-            sum += arr[i] * begin + arr[j] * begin;
-            begin++;
-            i++;
-            j--;
+            // 计算有多少种长度子数组
+            // begin也是i所指向的数字出现的次数
+            int begin = (int) Math.ceil(arr.length / 2.0);
+
+            while (i < j) {
+                sum += arr[i] * begin + arr[j] * begin;
+                begin++;
+                i++;
+                j--;
+            }
+
+            if (i == j) {
+                sum += arr[i] * begin;
+            }
+
+            return sum;
         }
-
-        if (i == j) {
-            sum += arr[i] * begin;
-        }
-
-        return sum;
     }
+
+    static class Right {
+
+        public int sumOddLengthSubarrays(int[] arr) {
+
+        }
+
+    }
+
 }
