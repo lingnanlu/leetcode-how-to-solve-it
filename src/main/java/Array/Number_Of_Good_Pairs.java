@@ -66,6 +66,9 @@ import java.util.Map;
  * 第三次 有数组对 2 (和前面的组成)
  * 第四次, 有数组对 3.
  *
+ * 启示:
+ *
+ * 还是要仔细读题, 题目中的已知往往能给你一些线索.
  */
 public class Number_Of_Good_Pairs {
 
