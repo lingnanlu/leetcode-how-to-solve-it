@@ -139,8 +139,6 @@ public class Number_Of_Good_Pairs {
             return result;
         }
 
-
-
     }
 
     static class Forth {
