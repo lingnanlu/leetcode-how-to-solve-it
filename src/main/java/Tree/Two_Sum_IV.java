@@ -81,9 +81,7 @@ public class Two_Sum_IV {
             TreeNode left = null;
             TreeNode right = null;
 
-            while (left.val < right.val) {
-
-            }
+            return true;
         }
 
         private TreeNode getNext(TreeNode root, TreeNode p) {
