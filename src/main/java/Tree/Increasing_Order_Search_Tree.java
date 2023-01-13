@@ -10,7 +10,7 @@ import java.util.List;
  *
  * 方法二:
  *
- * 能不能一边遍历一边构建?
+ * 能不能一边遍历一边构建? todo
  */
 public class Increasing_Order_Search_Tree {
 
@@ -50,7 +50,7 @@ public class Increasing_Order_Search_Tree {
     static class Second {
 
         public TreeNode increasingBST(TreeNode root) {
-
+            return null;
         }
 
     }
