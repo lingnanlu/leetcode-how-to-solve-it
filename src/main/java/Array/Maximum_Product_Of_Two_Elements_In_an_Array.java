@@ -9,7 +9,6 @@ public class Maximum_Product_Of_Two_Elements_In_an_Array {
     public int maxProduct(int[] nums) {
         int max = Integer.MIN_VALUE;
         int second2max = Integer.MIN_VALUE;
-
         for (int n : nums) {
             if (n > max) {
                 second2max = max;
